@@ -1,21 +1,107 @@
 ---
 title: Supported Databases
-description: Learn the essential Qubase workflow for supported databases.
+description: Learn which database management systems are supported by Qubase.
 ---
 
 # Supported Databases
 
-Supported Databases is part of the Qubase Overview workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Qubase is designed to work with modern relational database management systems (RDBMS). Depending on your selected database type, Qubase generates SQL that follows the syntax and conventions of the target database.
 
-## Key guidance
+## Why choose a database type?
 
-Confirm the current Workspace and Project context before continuing.
+When creating a Project or Database Schema, selecting the correct database system ensures that generated SQL scripts use the appropriate:
 
-## Before you continue
+- Data types
+- Constraints
+- Default values
+- SQL syntax
+- Database-specific features
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+> [!NOTE]
+> Choose the same database system that your application uses to ensure generated SQL is compatible.
+
+---
+
+## Supported database systems
+
+| Database | Status | Description |
+| -------- | ------ | ----------- |
+| PostgreSQL | ✅ Supported | Advanced open-source relational database with rich SQL features. |
+| MySQL | ✅ Supported | Popular relational database widely used for web applications. |
+| MariaDB | 🚧 Planned | MySQL-compatible relational database. |
+| Microsoft SQL Server | 🚧 Planned | Enterprise-grade database platform from Microsoft. |
+| Oracle Database | 🚧 Planned | High-performance enterprise relational database. |
+| SQLite | 🚧 Planned | Lightweight embedded database for desktop and mobile applications. |
+
+---
+
+## Recommended databases
+
+### PostgreSQL
+
+Recommended for:
+
+- Enterprise applications
+- SaaS platforms
+- Large-scale systems
+- Advanced SQL features
+- Complex relationships
+
+### MySQL
+
+Recommended for:
+
+- Small to medium web applications
+- CMS platforms
+- E-commerce systems
+- Learning SQL
+
+---
+
+## Database compatibility
+
+Qubase automatically adapts generated SQL based on your selected database.
+
+Examples include:
+
+- Data type mapping
+- Auto-increment syntax
+- Default value generation
+- Constraint syntax
+- Index creation
+
+This helps reduce manual changes after exporting SQL.
+
+---
+
+## Future support
+
+Future releases of Qubase may include support for additional database systems and database-specific engineering tools.
+
+Planned improvements include:
+
+- Additional SQL dialects
+- Database migration assistance
+- Cross-database conversion
+- Schema compatibility validation
+
+---
+
+## Best practices
+
+- Select the database system before designing your schema.
+- Avoid changing the database type after creating many tables.
+- Review generated SQL before executing it in production.
+- Keep your database version consistent with your development environment.
+
+> [!TIP]
+> If you're unsure which database to choose, PostgreSQL is a strong default for most modern applications because of its standards compliance and advanced SQL capabilities.
+
+---
 
 ## Related guides
 
-- [Overview](/docs/overview)
-- [Documentation home](/docs)
+- [Platform Structure](/docs/overview/platform-structure)
+- [Core Features](/docs/overview/core-features)
+- [Visual Modeling](/docs/visual-modeling)
+- [Database Engineering](/docs/database-engineering)

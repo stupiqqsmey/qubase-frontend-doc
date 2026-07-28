@@ -1,21 +1,116 @@
 ---
-title: Overview
-description: Learn how Qubase organizes database design and engineering work.
+title: Qubase Overview
+description: Understand the Qubase platform, its main features, platform structure, and supported database systems.
 ---
 
-# Overview
+# Qubase Overview
 
-Learn how Qubase organizes database design and engineering work.
+Qubase is a collaborative database design and engineering platform that helps individuals and teams create, manage, and maintain database structures visually.
 
-## Key guidance
+The platform combines visual database modeling, SQL and DBML editing, database engineering tools, AI-assisted features, collaboration, and version management in one workspace.
 
-Confirm the current Workspace and Project context before continuing.
+## What you can do with Qubase
 
-## Before you continue
+With Qubase, you can:
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+- Design database schemas using an interactive ERD Canvas
+- Create conceptual, logical, and physical database models
+- Write and synchronize SQL or DBML code
+- Import existing database structures
+- Generate database-specific SQL scripts
+- Collaborate with team members
+- Manage schema versions and restore previous changes
+- Use AI to assist with database design and optimization
 
-## Related guides
+## Platform workflow
 
-- [Documentation home](/docs)
-- [Getting Started](/docs/getting-started)
+A typical Qubase workflow follows this structure:
+
+```text
+Create Account
+      ↓
+Create Workspace
+      ↓
+Create Project
+      ↓
+Create Database Schema
+      ↓
+Design on the ERD Canvas
+      ↓
+Validate the Schema
+      ↓
+Generate SQL or DBML
+```
+
+## Platform hierarchy
+
+Qubase organizes resources into four main levels:
+
+```text
+User
+└── Workspace
+    └── Project
+        └── Database Schema
+```
+
+| Level | Description |
+| --- | --- |
+| User | The account used to access Qubase |
+| Workspace | A shared space for organizing teams and Projects |
+| Project | A container for related database schemas and engineering work |
+| Database Schema | The actual database model, ERD, tables, relationships, and code |
+
+> [!NOTE]
+> Every Database Schema belongs to a Project, and every Project belongs to a Workspace.
+
+## Main platform areas
+
+Qubase is organized into several major feature areas.
+
+### Visual Modeling
+
+Design database schemas visually using tables, columns, relationships, constraints, and an interactive ERD Canvas.
+
+### Database Engineering
+
+Import existing database structures, compare schema changes, and generate database-specific SQL scripts.
+
+### AI Engineering
+
+Use AI assistance to generate, explain, review, and improve database structures.
+
+### Collaboration
+
+Invite members, assign roles, leave comments, and work together on shared database projects.
+
+### Templates
+
+Create a new database design from reusable schema templates.
+
+### Version History
+
+Track database schema changes and restore previous versions when necessary.
+
+## Who is Qubase for?
+
+Qubase is suitable for:
+
+- Database designers
+- Backend developers
+- Full-stack developers
+- Software engineering teams
+- Students learning database design
+- Organizations managing multiple database projects
+
+## Explore the platform
+
+Continue with the following guides:
+
+- [What is Qubase?](/docs/overview/what-is-qubase)
+- [Core Features](/docs/overview/core-features)
+- [Platform Structure](/docs/overview/platform-structure)
+- [Supported Databases](/docs/overview/supported-databases)
+
+## Next step
+
+After understanding the Qubase platform, continue to [Visual Modeling](/docs/visual-modeling) to start designing database schemas with the ERD Canvas.k

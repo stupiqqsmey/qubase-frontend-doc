@@ -1,21 +1,166 @@
 ---
 title: Platform Structure
-description: Learn the essential Qubase workflow for platform structure.
+description: Learn how Qubase organizes Workspaces, Projects, and Database Schemas.
 ---
 
 # Platform Structure
 
-Platform Structure is part of the Qubase Overview workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Qubase organizes your work into a clear hierarchy that makes it easy to manage database projects, collaborate with team members, and maintain multiple database schemas.
 
-## Key guidance
+Understanding this structure will help you organize your work more efficiently.
 
-Confirm the current Workspace and Project context before continuing.
+## Platform hierarchy
 
-## Before you continue
+Every resource in Qubase belongs to a parent resource.
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+```text
+User
+└── Workspace
+    └── Project
+        └── Database Schema
+```
+
+Each level has a specific responsibility.
+
+| Level | Description |
+| ------ | ----------- |
+| User | Your personal Qubase account. |
+| Workspace | A shared space where teams collaborate on projects. |
+| Project | A container that groups related database work. |
+| Database Schema | The actual database model, including tables, relationships, constraints, and code. |
+
+---
+
+## User
+
+A User represents your Qubase account.
+
+Your account allows you to:
+
+- Create Workspaces
+- Join existing Workspaces
+- Collaborate with team members
+- Manage your profile and account settings
+
+A single user can belong to multiple Workspaces.
+
+---
+
+## Workspace
+
+A Workspace is the highest level of collaboration.
+
+It contains everything related to a team or organization.
+
+Inside a Workspace you can:
+
+- Create multiple Projects
+- Invite members
+- Assign roles and permissions
+- Manage Workspace settings
+
+Example:
+
+```text
+Workspace
+├── E-Commerce Team
+├── HR System
+└── Inventory Team
+```
+
+---
+
+## Project
+
+A Project represents a specific application or system.
+
+Projects help organize database designs separately.
+
+Examples:
+
+```text
+Workspace
+│
+├── Online Store
+├── Mobile Banking
+├── Hospital Management
+└── School Management
+```
+
+Each Project contains one or more Database Schemas.
+
+---
+
+## Database Schema
+
+A Database Schema is where database design happens.
+
+Inside a Schema you can:
+
+- Create tables
+- Add columns
+- Define primary keys
+- Create foreign keys
+- Build relationships
+- Generate SQL
+- Generate DBML
+
+Every schema belongs to exactly one Project.
+
+---
+
+## Example organization
+
+Below is an example of how a software company might organize Qubase.
+
+```text
+John (User)
+│
+└── Workspace: ABC Company
+    │
+    ├── Project: HR System
+    │      ├── Schema v1
+    │      └── Schema v2
+    │
+    ├── Project: CRM System
+    │      └── Production Schema
+    │
+    └── Project: Inventory System
+           ├── Development
+           └── Production
+```
+
+---
+
+## Why this structure?
+
+Organizing resources into multiple levels provides several benefits:
+
+- Keeps projects separated
+- Makes collaboration easier
+- Improves permission management
+- Supports multiple applications
+- Simplifies version management
+- Scales from individual developers to enterprise teams
+
+---
+
+## Best practices
+
+- Create one Workspace for each organization or team.
+- Create one Project for each application.
+- Keep development and production schemas separate.
+- Use meaningful names for Workspaces, Projects, and Schemas.
+- Archive unused Projects instead of deleting them.
+
+> [!TIP]
+> If you're building multiple applications for the same company, create one Workspace and multiple Projects instead of creating multiple Workspaces.
+
+---
 
 ## Related guides
 
-- [Overview](/docs/overview)
-- [Documentation home](/docs)
+- [What is Qubase?](/docs/overview/what-is-qubase)
+- [Core Features](/docs/overview/core-features)
+- [Supported Databases](/docs/overview/supported-databases)
+- [Getting Started](/docs/getting-started)
