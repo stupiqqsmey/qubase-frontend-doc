@@ -5,17 +5,60 @@ description: Set up your Qubase account, Workspace, and Project before creating 
 
 # Getting Started
 
-Set up your Qubase account, Workspace, and Project before creating your first Database Schema.
+Welcome to Qubase. This guide helps you create your account, set up a Workspace, create a Project, and prepare your first Database Schema.
 
-## Key guidance
+## Getting started workflow
 
-Confirm the current Workspace and Project context before continuing.
+Follow these steps in order:
 
-## Before you continue
+1. Create your Qubase account.
+2. Create or join a Workspace.
+3. Create a Project inside the Workspace.
+4. Choose a database model type.
+5. Create your first Database Schema.
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+## Step 1: Create an account
 
-## Related guides
+Create a Qubase account using your name, email address, and password.
 
-- [Documentation home](/docs)
-- [Getting Started](/docs/getting-started)
+After registration, verify your email address before signing in.
+
+[Create your account →](/docs/getting-started/create-account)
+
+## Step 2: Create a Workspace
+
+A Workspace is the main collaboration area in Qubase.
+
+It can contain multiple Projects and allows team members to work together on database models.
+
+[Create a Workspace →](/docs/getting-started/create-workspace)
+
+## Step 3: Create a Project
+
+A Project belongs to a Workspace and contains your database schemas, ERD diagrams, SQL or DBML code, templates, and version history.
+
+The user who creates the Project automatically becomes the Project Owner.
+
+[Create a Project →](/docs/getting-started/create-project)
+
+## Step 4: Create your first database model
+
+Before creating a Database Schema, choose one of the supported model types:
+
+| Model type | Purpose |
+| --- | --- |
+| Conceptual | Defines high-level business entities and relationships |
+| Logical | Defines attributes, keys, relationships, and cardinality |
+| Physical | Defines tables, columns, data types, constraints, and indexes |
+
+[Create your first database model →](/docs/getting-started/first-database-model)
+
+## Qubase structure
+
+Qubase follows this hierarchy:
+
+```text
+User
+└── Workspace
+    └── Project
+        └── Database Schema
