@@ -1,21 +1,105 @@
 ---
-title: Create a Project
-description: Learn the essential Qubase workflow for create a project.
+title: Create Project
+description: Create a Project inside a Workspace to start designing and managing your database schemas.
 ---
 
-# Create a Project
+# Create Project
 
-Create a Project is part of the Qubase Getting Started workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+A Project is the main workspace for database design and development in Qubase. It contains your database schemas, ERD diagrams, SQL or DBML code, AI-powered tools, and collaboration history.
 
-## Key guidance
+Every Project belongs to a single Workspace.
 
-Confirm the current Workspace and Project context before continuing.
+## Before you begin
 
-## Before you continue
+Before creating a Project, make sure that you:
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+- Have a verified Qubase account
+- Are signed in to Qubase
+- Have access to a Workspace
+- Have permission to create Projects in the selected Workspace
+
+> [!NOTE]
+> A Project cannot exist without a Workspace.
+
+## Create a Project
+
+1. Open your Workspace.
+2. Select **Projects** from the navigation menu.
+3. Click **New Project**.
+4. Enter the required information.
+
+| Field | Description |
+| ------ | ----------- |
+| Project Name | A unique and descriptive project name |
+| Description | A brief explanation of the project *(optional)* |
+| Database Type | Select the target database system (for example PostgreSQL or MySQL) |
+
+5. Review the project information.
+6. Click **Create Project**.
+
+## Project structure
+
+Each Project can contain:
+
+- Multiple Database Schemas
+- ERD diagrams
+- SQL or DBML source code
+- AI-generated suggestions
+- Version history
+- Team collaboration
+- Comments and discussions
+
+## Project permissions
+
+Depending on your Workspace role, you may be able to:
+
+| Permission | Description |
+| ---------- | ----------- |
+| View | Open and browse the Project |
+| Edit | Modify database schemas and diagrams |
+| Comment | Leave feedback on schemas |
+| Manage | Configure project settings and members |
+
+Permissions are managed by Workspace Owners or administrators.
+
+## What happens next?
+
+After creating your Project, you can:
+
+- Create your first Database Schema
+- Open the Visual ERD Canvas
+- Import an existing database
+- Generate SQL or DBML
+- Invite collaborators
+- Use AI-powered database engineering features
+
+## Best practices
+
+- Give each Project a meaningful name.
+- Create separate Projects for different applications or systems.
+- Use clear descriptions so team members understand the project's purpose.
+- Keep related database schemas within the same Project.
+
+> [!TIP]
+> If your organization manages multiple applications, create one Project for each application instead of placing everything into a single Project.
+
+## Troubleshooting
+
+### I can't create a Project
+
+Verify that:
+
+- You are inside a Workspace.
+- You have permission to create Projects.
+- The Workspace has not reached any project limits.
+
+### Which database type should I choose?
+
+Select the database system that your application will use. This helps Qubase generate compatible SQL during Forward Engineering.
 
 ## Related guides
 
 - [Getting Started](/docs/getting-started)
-- [Documentation home](/docs)
+- [Create Workspace](/docs/getting-started/create-workspace)
+- [Create Your First Database Model](/docs/getting-started/first-database-model)
+- [Visual Modeling](/docs/visual-modeling)

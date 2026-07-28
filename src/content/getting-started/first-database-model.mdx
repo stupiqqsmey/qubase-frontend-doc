@@ -1,21 +1,101 @@
 ---
 title: Create Your First Database Model
-description: Learn the essential Qubase workflow for create your first database model.
+description: Create your first database schema and start designing with the Qubase ERD Canvas.
 ---
 
 # Create Your First Database Model
 
-Create Your First Database Model is part of the Qubase Getting Started workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+After creating a Project, you're ready to design your first database model.
 
-## Key guidance
+Qubase provides an interactive **ERD Canvas** where you can visually design database schemas, define relationships, and generate SQL or DBML code.
 
-Confirm the current Workspace and Project context before continuing.
+## Before you begin
 
-## Before you continue
+Before creating your first database model, make sure that you:
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+- Have a Qubase account
+- Have created a Workspace
+- Have created a Project
+- Have permission to edit the Project
+
+> [!NOTE]
+> Every Database Schema belongs to a Project.
+
+## Choose a model type
+
+Qubase supports three database modeling approaches.
+
+| Model Type | Purpose |
+| ----------- | ------- |
+| Conceptual Model | Define high-level business entities and their relationships. |
+| Logical Model | Design tables, attributes, keys, and relationships without database-specific details. |
+| Physical Model | Define database-specific tables, data types, indexes, and constraints. |
+
+Choose the model type that best matches your current stage of database design.
+
+## Create a Database Schema
+
+1. Open your Project.
+2. Navigate to **Database Schemas**.
+3. Click **New Schema**.
+4. Enter a schema name.
+5. Select the model type.
+6. Click **Create**.
+
+Your new Database Schema will be created and opened automatically.
+
+## Open the ERD Canvas
+
+After creating a Database Schema, Qubase opens the **ERD Canvas**.
+
+From the canvas you can:
+
+- Create tables
+- Add columns
+- Define primary keys
+- Create foreign key relationships
+- Organize the diagram visually
+- Generate SQL or DBML code
+- Save changes automatically
+
+## Your first table
+
+To begin designing your database:
+
+1. Click **Add Table**.
+2. Enter the table name.
+3. Add columns.
+4. Select a Primary Key.
+5. Save the table.
+
+Continue adding tables until your database structure is complete.
+
+## What's next?
+
+Once your first schema has been created, you can continue with advanced database modeling features such as:
+
+- Creating relationships
+- Managing constraints
+- Synchronizing SQL and DBML
+- Reverse Engineering existing databases
+- Forward Engineering database scripts
+- AI-assisted database design
+
+> [!TIP]
+> Start with the core entities in your system before adding detailed tables and relationships.
+
+## Best practices
+
+- Use clear and descriptive table names.
+- Create one schema for each database design.
+- Define primary keys before creating relationships.
+- Organize tables to keep the ERD easy to read.
+- Save your changes regularly.
 
 ## Related guides
 
-- [Getting Started](/docs/getting-started)
-- [Documentation home](/docs)
+- [Visual Modeling Overview](/docs/visual-modeling)
+- [ERD Canvas](/docs/visual-modeling/erd-canvas)
+- [Create Tables](/docs/visual-modeling/create-tables)
+- [Relationships](/docs/visual-modeling/relationships)
+- [Database Model Types](/docs/visual-modeling/model-types)
