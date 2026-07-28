@@ -1,29 +1,15 @@
-export default {
-  overview: {
-    title: "Overview",
-  },
+const meta = {
+  index: "Documentation",
+  "getting-started": "Getting Started",
+  overview: "Overview",
+  "visual-modeling": "Visual Modeling",
+  "database-engineering": "Database Engineering",
+  "ai-engineering": "AI Engineering",
+  collaboration: "Collaboration",
+  templates: "Database Templates",
+  "account-security": "Account & Security",
+  "admin-guide": "Admin Guide",
+  faq: "FAQ & Troubleshooting",
+};
 
-  "visual-modeling": {
-    title: "Visual & Code-Driven Modeling",
-  },
-
-  "database-management": {
-    title: "Database Management",
-  },
-
-  "ai-engineering": {
-    title: "AI-Assisted Database Engineering",
-  },
-
-  collaboration: {
-    title: "Collaboration",
-  },
-
-  "security-admin": {
-    title: "Security & Administration",
-  },
-
-  faq: {
-    title: "FAQ",
-  },
-}
+export default meta;

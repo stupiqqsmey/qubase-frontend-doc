@@ -1,10 +1,14 @@
-export default {
-  index: "Introduction",
+const meta = {
+  "index": "Visual Modeling",
+  "model-types": "Model Types",
   "erd-canvas": "ERD Canvas",
-  "table-designer": "Table Designer",
-  "relationship-management": "Relationship Management",
-  "crow-foot-notation": "Crow's Foot Notation",
-  "sql-preview": "SQL Preview",
-  "sql-sync": "SQL ↔ ERD Synchronization",
-  "smart-quick-create": "Smart Quick Create",
-}
+  "create-tables": "Create Tables",
+  "columns-and-constraints": "Columns and Constraints",
+  "relationships": "Relationships",
+  "cardinality": "Cardinality",
+  "canvas-tools": "Canvas Tools",
+  "mini-map": "Mini-map",
+  "sql-dbml-sync": "SQL and DBML Sync",
+};
+
+export default meta;

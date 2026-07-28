@@ -1,7 +1,7 @@
-export default {
-  index: "Introduction",
-  authentication: "Authentication",
-  rbac: "RBAC",
-  permissions: "Permissions",
-  "activity-logs": "Activity Logs",
-}
+const meta = {
+  "index": "FAQ and Troubleshooting",
+  "frequently-asked-questions": "Frequently Asked Questions",
+  "troubleshooting": "Troubleshooting",
+};
+
+export default meta;
