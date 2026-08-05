@@ -1,21 +1,121 @@
 ---
-title: Roles and Permissions
-description: Learn the essential Qubase workflow for roles and permissions.
+title: Roles & Permissions
+description: Understand how roles and permissions control access to resources in Qubase.
 ---
 
-# Roles and Permissions
+# Roles & Permissions
 
-Roles and Permissions is part of the Qubase Account and Security workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Roles and Permissions determine what actions users are allowed to perform within Qubase.
 
-## Key guidance
+Access to workspaces, projects, database schemas, and collaboration features is controlled through assigned roles. Understanding your permissions helps you collaborate effectively while protecting shared resources.
 
-Apply Role-Based Access Control according to the responsibilities of each Workspace and Project member.
+---
 
-## Before you continue
+## Before you begin
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+Before managing roles and permissions, ensure that you have:
+
+- Access to a Workspace or Project
+- The required permissions to manage members (if applicable)
+
+> [!NOTE]
+> Available roles and permissions depend on your workspace and project configuration.
+
+---
+
+## What are Roles?
+
+A role is a collection of permissions assigned to a user.
+
+Roles define what actions a user can perform within a Workspace or Project.
+
+Typical responsibilities may include:
+
+- Managing members
+- Creating projects
+- Editing database schemas
+- Viewing project resources
+- Collaborating with team members
+
+---
+
+## What are Permissions?
+
+Permissions control access to specific actions and resources.
+
+Examples of permissions include:
+
+- View database schemas
+- Create database schemas
+- Edit database schemas
+- Delete database schemas
+- Manage members
+- Manage projects
+- Access AI Engineering features
+
+Permissions are granted based on the assigned role.
+
+---
+
+## How access works
+
+```text
+User
+   │
+   ▼
+Assigned Role
+   │
+   ▼
+Granted Permissions
+   │
+   ▼
+Access Workspace & Project Resources
+```
+
+---
+
+## Permission management
+
+Depending on your assigned role, you may be able to:
+
+- View resources
+- Create resources
+- Edit resources
+- Delete resources
+- Invite members
+- Manage collaboration settings
+
+Available actions depend on your assigned permissions.
+
+---
+
+## Why roles matter
+
+Roles help teams:
+
+- Protect important resources
+- Prevent unauthorized changes
+- Organize team responsibilities
+- Improve collaboration
+- Maintain project security
+
+---
+
+## Best practices
+
+- Assign only the permissions required for each team member.
+- Review assigned roles regularly.
+- Update permissions when responsibilities change.
+- Avoid granting unnecessary administrative access.
+
+> [!TIP]
+> Following the principle of least privilege helps keep projects secure and easier to manage.
+
+---
 
 ## Related guides
 
-- [Account and Security](/docs/account-security)
-- [Documentation home](/docs)
+- [Workspace Permissions](/docs/account-security/workspace-permissions)
+- [Project Permissions](/docs/account-security/project-permissions)
+- [Project Members](/docs/collaboration/project-members)
+- [Authentication](/docs/account-security/authentication)

@@ -1,21 +1,103 @@
 ---
 title: Workspace Permissions
-description: Learn the essential Qubase workflow for workspace permissions.
+description: Understand how access is managed within a Workspace.
 ---
 
 # Workspace Permissions
 
-Workspace Permissions is part of the Qubase Account and Security workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Workspace Permissions determine what members are allowed to do within a Workspace.
 
-## Key guidance
+Permissions help protect shared resources by ensuring that only authorized members can perform specific actions. Depending on your assigned role, you may have different levels of access.
 
-Apply Role-Based Access Control according to the responsibilities of each Workspace and Project member.
+---
 
-## Before you continue
+## Before you begin
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+Before managing Workspace Permissions, ensure that you have:
+
+- Access to a Workspace
+- Permission to manage workspace members (if applicable)
+
+> [!NOTE]
+> Available permissions depend on your assigned role within the Workspace.
+
+---
+
+## What are Workspace Permissions?
+
+Workspace Permissions control access to Workspace-level resources.
+
+Examples include:
+
+- Viewing the Workspace
+- Updating Workspace information
+- Creating Projects
+- Managing Workspace members
+- Viewing Workspace activity
+
+Workspace Permissions apply across the entire Workspace.
+
+---
+
+## Permission workflow
+
+```text
+Workspace
+      │
+      ▼
+Assigned Role
+      │
+      ▼
+Workspace Permissions
+      │
+      ▼
+Allowed Actions
+```
+
+---
+
+## Managing Workspace access
+
+Depending on your assigned role, you may be able to:
+
+- View Workspace information
+- Update Workspace details
+- Create Projects
+- Invite members
+- Remove members
+- Manage Workspace settings
+
+Available actions depend on your assigned permissions.
+
+---
+
+## Why Workspace Permissions matter
+
+Workspace Permissions help:
+
+- Protect shared resources
+- Organize team responsibilities
+- Prevent unauthorized changes
+- Improve collaboration
+- Maintain Workspace security
+
+---
+
+## Best practices
+
+- Grant only the permissions required.
+- Review Workspace access regularly.
+- Remove inactive members when appropriate.
+- Keep Workspace membership organized.
+
+> [!TIP]
+> Assign permissions based on responsibilities rather than convenience.
+
+---
 
 ## Related guides
 
-- [Account and Security](/docs/account-security)
-- [Documentation home](/docs)
+- [Roles & Permissions](/docs/account-security/roles-and-permissions)
+- [Project Permissions](/docs/account-security/project-permissions)
+- [Workspaces](/docs/collaboration/workspaces)
+- [Project Members](/docs/collaboration/project-members)

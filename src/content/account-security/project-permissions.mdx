@@ -1,21 +1,118 @@
 ---
 title: Project Permissions
-description: Learn the essential Qubase workflow for project permissions.
+description: Understand how access to projects and database resources is managed in Qubase.
 ---
 
 # Project Permissions
 
-Project Permissions is part of the Qubase Account and Security workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Project Permissions determine what actions members can perform within a project.
 
-## Key guidance
+Permissions help protect project resources by ensuring that only authorized members can view, edit, or manage database schemas and collaboration features.
 
-Apply Role-Based Access Control according to the responsibilities of each Workspace and Project member.
+Each member receives access according to their assigned project role.
 
-## Before you continue
+---
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+## Before you begin
+
+Before managing Project Permissions, ensure that you have:
+
+- Access to a Workspace
+- Access to a Project
+- Permission to manage project members (if applicable)
+
+> [!NOTE]
+> Project Permissions apply only to the selected project and do not affect other projects within the same Workspace.
+
+---
+
+## What are Project Permissions?
+
+Project Permissions control access to project-level resources.
+
+Depending on your assigned role, you may be able to:
+
+- View the project
+- Create database schemas
+- Edit database schemas
+- Delete database schemas
+- Use AI Engineering features
+- Collaborate with team members
+- Manage project members
+
+Available permissions depend on your assigned project role.
+
+---
+
+## Permission workflow
+
+```text
+Project
+      │
+      ▼
+Assigned Role
+      │
+      ▼
+Project Permissions
+      │
+      ▼
+Allowed Actions
+```
+
+---
+
+## Managing Project access
+
+Depending on your permissions, you may be able to:
+
+- View project information
+- Create or edit database schemas
+- Invite project members
+- Manage collaboration
+- Review version history
+
+The available actions depend on your assigned permissions.
+
+---
+
+## Why Project Permissions matter
+
+Project Permissions help:
+
+- Protect project resources
+- Prevent unauthorized changes
+- Organize team collaboration
+- Improve project security
+- Maintain data integrity
+
+---
+
+## Benefits
+
+Project Permissions allow teams to:
+
+- Work securely
+- Control access to sensitive resources
+- Clearly define responsibilities
+- Support effective collaboration
+
+---
+
+## Best practices
+
+- Assign permissions according to each member's responsibilities.
+- Review project access regularly.
+- Remove project access when it is no longer required.
+- Follow the principle of least privilege.
+
+> [!TIP]
+> Grant only the permissions needed for each member to complete their work.
+
+---
 
 ## Related guides
 
-- [Account and Security](/docs/account-security)
-- [Documentation home](/docs)
+- [Workspace Permissions](/docs/account-security/workspace-permissions)
+- [Roles & Permissions](/docs/account-security/roles-and-permissions)
+- [Project Members](/docs/collaboration/project-members)
+- [Real-Time Collaboration](/docs/collaboration/real-time-collaboration)
