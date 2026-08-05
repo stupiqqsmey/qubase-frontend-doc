@@ -1,21 +1,140 @@
 ---
-title: Customize a Template
-description: Learn the essential Qubase workflow for customize a template.
+title: Customize Template
+description: Modify imported database templates to match your application's requirements.
 ---
 
-# Customize a Template
+# Customize Template
 
-Customize a Template is part of the Qubase Database Templates workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Customize Template allows you to modify an imported database template to fit your application's specific requirements.
 
-## Key guidance
+After importing a template, you are free to adjust its structure, relationships, and database objects. The imported template becomes part of your project and behaves like any other Database Schema.
 
-Confirm the current Workspace and Project context before continuing.
+Customizing templates helps you reuse existing database designs while adapting them to your business needs.
 
-## Before you continue
+---
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+## Before you begin
+
+Before customizing a template, ensure that you have:
+
+- Imported a database template
+- Permission to edit the Database Schema
+
+> [!NOTE]
+> Customizing a template affects only the imported Database Schema in your project. The original template remains unchanged.
+
+---
+
+## What can you customize?
+
+After importing a template, you can modify:
+
+- Tables
+- Columns
+- Data Types
+- Primary Keys
+- Foreign Keys
+- Relationships
+- Constraints
+- Table names
+- Column names
+
+All supported database objects can be edited using the Visual Modeling tools.
+
+---
+
+## Customization workflow
+
+```text
+Import Template
+        │
+        ▼
+Open Database Schema
+        │
+        ▼
+Modify Database Structure
+        │
+        ▼
+Validate Changes
+        │
+        ▼
+Save Database Schema
+```
+
+---
+
+## Customize a template
+
+To customize an imported template:
+
+1. Open your Project.
+2. Open the imported Database Schema.
+3. Edit the required database objects.
+4. Validate the updated schema.
+5. Save your changes.
+
+The customized schema is now part of your project.
+
+---
+
+## Common customizations
+
+Typical modifications include:
+
+| Customization | Purpose |
+| ------------- | ------- |
+| Rename tables | Match business terminology |
+| Add new tables | Extend the database model |
+| Remove unused tables | Simplify the schema |
+| Add new columns | Store additional information |
+| Update relationships | Reflect business rules |
+| Modify constraints | Improve data integrity |
+
+---
+
+## Continue working
+
+After customizing the template, you can continue using all Qubase features, including:
+
+- Visual Modeling
+- Database Engineering
+- AI Engineering
+- Collaboration
+- SQL Generation
+- DBML Generation
+
+The customized schema integrates seamlessly with the rest of your project.
+
+---
+
+## Benefits
+
+Customizing templates helps you:
+
+- Adapt templates to your application
+- Reduce repetitive work
+- Maintain flexibility
+- Improve database design
+- Accelerate development
+
+---
+
+## Best practices
+
+- Review the imported template before editing.
+- Rename objects using consistent naming conventions.
+- Remove unnecessary database objects.
+- Validate the schema after major changes.
+- Review relationships before generating SQL.
+
+> [!TIP]
+> Templates are designed to provide a strong starting point. Customize them to reflect your application's real business requirements.
+
+---
 
 ## Related guides
 
-- [Database Templates](/docs/templates)
-- [Documentation home](/docs)
+- [Template Library](/docs/templates/template-library)
+- [Preview Template](/docs/templates/preview-template)
+- [Import Template](/docs/templates/import-template)
+- [Visual Modeling](/docs/visual-modeling)

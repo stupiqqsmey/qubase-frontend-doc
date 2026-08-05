@@ -1,21 +1,128 @@
 ---
-title: Import a Template
-description: Learn the essential Qubase workflow for import a template.
+title: Import Template
+description: Import a built-in database template into your project and start designing immediately.
 ---
 
-# Import a Template
+# Import Template
 
-Import a Template is part of the Qubase Database Templates workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Import Template allows you to add a built-in database template to your project.
 
-## Key guidance
+Instead of creating a database schema from scratch, you can import a pre-designed template and continue customizing it to match your application's requirements.
 
-Confirm the current Workspace and Project context before continuing.
+Imported templates become part of your project and can be modified using all Qubase database engineering features.
 
-## Before you continue
+---
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+## Before you begin
+
+Before importing a template, ensure that you have:
+
+- Created a Workspace
+- Created a Project
+- Selected a database template from the Template Library
+
+> [!NOTE]
+> Importing a template creates a new Database Schema in your project. Changes made after import affect only your project and do not modify the original template.
+
+---
+
+## Import workflow
+
+```text
+Browse Template Library
+          │
+          ▼
+Select Template
+          │
+          ▼
+Preview Template
+          │
+          ▼
+Import Template
+          │
+          ▼
+Open Database Schema
+          │
+          ▼
+Customize Database
+```
+
+---
+
+## Import a template
+
+To import a template:
+
+1. Open your Project.
+2. Navigate to **Template Library**.
+3. Select the desired template.
+4. Review the template preview.
+5. Select **Import Template**.
+6. Wait for the import to complete.
+
+The imported database schema is now available for editing.
+
+---
+
+## What is imported?
+
+Depending on the selected template, Qubase imports:
+
+- Database tables
+- Columns
+- Relationships
+- Primary Keys
+- Foreign Keys
+- Constraints
+- Default database structure
+
+All imported objects can be modified after import.
+
+---
+
+## After importing
+
+Once the template has been imported, you can:
+
+- Edit tables
+- Add new columns
+- Modify relationships
+- Generate SQL
+- Generate DBML
+- Use AI Engineering features
+- Collaborate with your team
+
+The imported schema behaves like any other database schema in Qubase.
+
+---
+
+## Benefits
+
+Importing templates helps you:
+
+- Save development time
+- Reduce repetitive database design
+- Start with proven database structures
+- Accelerate project setup
+- Focus on customization instead of rebuilding common structures
+
+---
+
+## Best practices
+
+- Preview the template before importing.
+- Import the template that most closely matches your business domain.
+- Review the imported schema before making changes.
+- Validate the database structure after customization.
+
+> [!TIP]
+> Imported templates are intended as a starting point. Customize the schema to match your application's specific business requirements.
+
+---
 
 ## Related guides
 
-- [Database Templates](/docs/templates)
-- [Documentation home](/docs)
+- [Template Library](/docs/templates/template-library)
+- [Preview Template](/docs/templates/preview-template)
+- [Customize Template](/docs/templates/customize-template)
+- [Visual Modeling](/docs/visual-modeling)
