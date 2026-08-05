@@ -1,21 +1,117 @@
 ---
 title: Database Engineering
-description: Connect database design work with practical schema engineering workflows.
+description: Connect, analyze, transform, and synchronize database structures using Qubase Database Engineering tools.
 ---
 
 # Database Engineering
 
-Connect database design work with practical schema engineering workflows.
+Database Engineering extends visual database modeling by connecting your database design with real-world database systems.
 
-## Key guidance
+With Qubase, you can connect existing databases, reverse engineer schemas, generate SQL scripts, compare schema changes, and synchronize your database design throughout the development lifecycle.
 
-Review the source and target Database Schema before applying engineering changes.
+## What is Database Engineering?
 
-## Before you continue
+Database Engineering focuses on transforming and maintaining database structures beyond visual modeling.
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+Instead of creating every table manually, Qubase provides tools to:
+
+- Connect existing databases
+- Import database schemas
+- Reverse engineer databases into ERD diagrams
+- Generate SQL scripts
+- Compare schema changes
+- Export database models
+
+These tools help reduce manual work while improving consistency between your visual design and production databases.
+
+---
+
+## Features included
+
+Database Engineering includes the following capabilities:
+
+- Database Connection
+- Reverse Engineering
+- Forward Engineering
+- Schema Introspection
+- Schema Comparison
+- Database Migration
+- DBMS Conversion
+- Import & Export
+
+---
+
+## Typical workflow
+
+A common engineering workflow looks like this:
+
+```text
+Connect Database
+        │
+        ▼
+Read Database Structure
+        │
+        ▼
+Generate ERD
+        │
+        ▼
+Modify Database Design
+        │
+        ▼
+Validate Changes
+        │
+        ▼
+Generate SQL
+        │
+        ▼
+Deploy Database
+```
+
+---
+
+## Why use Database Engineering?
+
+Database Engineering helps you:
+
+- Modernize existing databases
+- Reduce repetitive SQL writing
+- Keep database documentation up to date
+- Detect schema differences
+- Improve collaboration between developers and database designers
+- Maintain consistency between diagrams and production databases
+
+---
+
+## Supported workflows
+
+Qubase supports multiple engineering workflows depending on your project.
+
+| Workflow | Description |
+| -------- | ----------- |
+| Database → ERD | Reverse engineer an existing database into a visual model |
+| ERD → SQL | Generate SQL scripts from your visual design |
+| ERD → DBML | Export database models as DBML |
+| Import → Modify → Export | Continue working with an existing database design |
+
+---
+
+## Best practices
+
+- Connect to development databases instead of production whenever possible.
+- Review imported schemas before making changes.
+- Validate the generated SQL before deployment.
+- Keep your visual model synchronized with the latest database changes.
+
+> [!TIP]
+> Database Engineering is most effective when used together with Visual Modeling. Start by understanding the existing database, then use the ERD Canvas to improve and maintain the design.
+
+---
 
 ## Related guides
 
-- [Documentation home](/docs)
-- [Getting Started](/docs/getting-started)
+- [Database Connection](/docs/database-engineering/database-connection)
+- [Reverse Engineering](/docs/database-engineering/reverse-engineering)
+- [Forward Engineering](/docs/database-engineering/forward-engineering)
+- [Schema Introspection](/docs/database-engineering/schema-introspection)
+- [Schema Comparison](/docs/database-engineering/schema-diff)
+- [Import & Export](/docs/database-engineering/import-export)

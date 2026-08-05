@@ -1,21 +1,161 @@
 ---
 title: Reverse Engineering
-description: Learn the essential Qubase workflow for reverse engineering.
+description: Generate an ERD from an existing database by importing its schema into Qubase.
 ---
 
 # Reverse Engineering
 
-Reverse Engineering is part of the Qubase Database Engineering workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Reverse Engineering allows Qubase to analyze an existing database and automatically generate a visual database model.
 
-## Key guidance
+Instead of manually recreating tables and relationships, Qubase reads the database structure and converts it into an interactive ERD Canvas.
 
-Review the source and target Database Schema before applying engineering changes.
+This feature is useful when working with legacy databases, production systems, or existing applications.
 
-## Before you continue
+## Before you begin
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+Before starting Reverse Engineering, ensure that you have:
+
+- Created a database connection
+- Connected to a supported database
+- Read access to the database schema
+
+> [!NOTE]
+> Reverse Engineering reads database metadata only. It does not modify your database.
+
+---
+
+## What can be imported?
+
+Qubase can import database objects including:
+
+- Tables
+- Columns
+- Primary Keys
+- Foreign Keys
+- Relationships
+- Indexes
+- Constraints
+- Schemas
+
+Imported objects are converted into a visual database model.
+
+---
+
+## Reverse Engineering workflow
+
+The typical workflow is:
+
+```text
+Connect Database
+        │
+        ▼
+Read Database Metadata
+        │
+        ▼
+Analyze Database Structure
+        │
+        ▼
+Generate ERD
+        │
+        ▼
+Review Imported Objects
+        │
+        ▼
+Save Database Model
+```
+
+---
+
+## Perform Reverse Engineering
+
+To reverse engineer an existing database:
+
+1. Open **Database Engineering**.
+2. Select **Reverse Engineering**.
+3. Choose an existing database connection.
+4. Select the database or schema.
+5. Start the analysis.
+6. Review the imported objects.
+7. Generate the ERD.
+
+After the process completes, the imported schema is displayed on the ERD Canvas.
+
+---
+
+## Imported database objects
+
+Depending on the selected database, Qubase may import:
+
+| Object | Description |
+| ------- | ----------- |
+| Tables | Database tables |
+| Columns | Table fields |
+| Primary Keys | Unique identifiers |
+| Foreign Keys | Table relationships |
+| Constraints | Validation rules |
+| Indexes | Database indexes |
+| Views | Database views (when supported) |
+
+---
+
+## Schema validation
+
+Before generating the ERD, Qubase validates the imported structure.
+
+Validation checks may include:
+
+- Missing Primary Keys
+- Broken Foreign Keys
+- Duplicate object names
+- Unsupported data types
+- Invalid relationships
+
+Any detected issues are reported before the ERD is created.
+
+---
+
+## Benefits
+
+Reverse Engineering helps you:
+
+- Understand legacy databases
+- Document existing systems
+- Create visual database diagrams
+- Analyze complex schemas
+- Continue database development visually
+
+---
+
+## Limitations
+
+Depending on the database system, some database-specific features may not be imported.
+
+Examples include:
+
+- Stored procedures
+- Functions
+- Triggers
+- Database-specific extensions
+
+Support for these objects depends on the selected database system.
+
+---
+
+## Best practices
+
+- Reverse engineer development databases whenever possible.
+- Review the generated ERD before making changes.
+- Validate imported relationships.
+- Save the generated database model before editing.
+
+> [!TIP]
+> After generating the ERD, use Visual Modeling to reorganize tables and improve the readability of large database diagrams.
+
+---
 
 ## Related guides
 
-- [Database Engineering](/docs/database-engineering)
-- [Documentation home](/docs)
+- [Database Connection](/docs/database-engineering/database-connection)
+- [Forward Engineering](/docs/database-engineering/forward-engineering)
+- [Schema Introspection](/docs/database-engineering/schema-introspection)
+- [Visual Modeling](/docs/visual-modeling)

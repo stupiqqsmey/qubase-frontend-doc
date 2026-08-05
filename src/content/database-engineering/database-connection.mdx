@@ -1,21 +1,151 @@
 ---
 title: Database Connection
-description: Learn the essential Qubase workflow for database connection.
+description: Connect Qubase to your database to import schemas, analyze structures, and perform database engineering tasks.
 ---
 
 # Database Connection
 
-Database Connection is part of the Qubase Database Engineering workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Database Connection allows Qubase to communicate with an existing database. Once connected, you can inspect database objects, import schemas, reverse engineer structures, and synchronize changes between your database and visual models.
 
-## Key guidance
+A successful connection is the first step before using advanced Database Engineering features.
 
-Review the source and target Database Schema before applying engineering changes.
+## Before you begin
 
-## Before you continue
+Before connecting a database, ensure that you have:
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+- Access to a supported database system
+- Database connection credentials
+- Network access to the database server
+- Permission to read the database schema
+
+> [!NOTE]
+> Connecting to a development or staging database is recommended instead of connecting directly to a production environment.
+
+---
+
+## Supported database systems
+
+Qubase supports connecting to supported relational database systems.
+
+Depending on your project configuration, available systems may include:
+
+- PostgreSQL
+- MySQL
+- Microsoft SQL Server
+
+Additional database systems may be supported in future releases.
+
+---
+
+## Connection information
+
+When creating a new connection, provide the required database information.
+
+| Field | Description |
+| ----- | ----------- |
+| Connection Name | Friendly name used inside Qubase |
+| Database Type | Target database system |
+| Host | Database server address |
+| Port | Database server port |
+| Database Name | Database to connect to |
+| Username | Database login username |
+| Password | Database login password |
+
+---
+
+## Create a connection
+
+To create a database connection:
+
+1. Open the Database Engineering module.
+2. Select **Database Connections**.
+3. Click **New Connection**.
+4. Enter the required connection information.
+5. Test the connection.
+6. Save the configuration.
+
+If the connection is successful, the database becomes available for engineering tasks.
+
+---
+
+## Test connection
+
+Before saving the configuration, Qubase validates the connection.
+
+The validation may include:
+
+- Server availability
+- Authentication
+- Database existence
+- Network accessibility
+- User permissions
+
+If validation fails, Qubase displays the detected issue.
+
+---
+
+## Connection status
+
+Each saved connection displays its current status.
+
+| Status | Meaning |
+| ------ | ------- |
+| Connected | Database is available |
+| Disconnected | Database is currently unavailable |
+| Invalid | Connection configuration is incorrect |
+| Error | An unexpected connection error occurred |
+
+---
+
+## Security recommendations
+
+To help protect your database:
+
+- Use strong database credentials.
+- Connect using secure network configurations.
+- Limit database permissions to only what is required.
+- Avoid sharing database credentials.
+- Review saved connections regularly.
+
+> [!IMPORTANT]
+> Never use highly privileged database accounts unless they are required for your engineering workflow.
+
+---
+
+## What you can do after connecting
+
+Once connected, you can:
+
+- Reverse engineer an existing database
+- Inspect database objects
+- Compare schema changes
+- Generate ERD diagrams
+- Synchronize database structures
+- Export SQL scripts
+
+---
+
+## Troubleshooting
+
+### Unable to connect
+
+Verify that:
+
+- The database server is running.
+- The host and port are correct.
+- Your username and password are valid.
+- Firewall rules allow access.
+- Your account has permission to access the database.
+
+### Authentication failed
+
+Double-check your credentials and verify that your database user has the necessary permissions.
+
+---
 
 ## Related guides
 
-- [Database Engineering](/docs/database-engineering)
-- [Documentation home](/docs)
+- [Reverse Engineering](/docs/database-engineering/reverse-engineering)
+- [Schema Introspection](/docs/database-engineering/schema-introspection)
+- [Schema Comparison](/docs/database-engineering/schema-diff)
+- [Import & Export](/docs/database-engineering/import-export)

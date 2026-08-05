@@ -1,21 +1,190 @@
 ---
 title: Forward Engineering
-description: Learn the essential Qubase workflow for forward engineering.
+description: Generate production-ready SQL scripts from your visual database model and deploy them to supported database systems.
 ---
 
 # Forward Engineering
 
-Forward Engineering is part of the Qubase Database Engineering workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Forward Engineering transforms your visual database model into executable SQL scripts for a supported database management system.
 
-## Key guidance
+Instead of manually writing SQL, Qubase converts your ERD, tables, columns, relationships, constraints, and indexes into SQL statements that can be reviewed, exported, or executed.
 
-Review the source and target Database Schema before applying engineering changes.
+This allows database designs to move from planning to implementation efficiently.
 
-## Before you continue
+---
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+## Before you begin
 
-## Related guides
+Before generating SQL, ensure that you have:
 
-- [Database Engineering](/docs/database-engineering)
-- [Documentation home](/docs)
+- Completed your database model
+- Defined all Primary Keys
+- Configured Foreign Keys
+- Selected a target DBMS
+- Resolved all validation issues
+
+> [!NOTE]
+> Forward Engineering generates SQL from the current database model. It does not automatically execute SQL against your database unless deployment is explicitly initiated.
+
+---
+
+# What is generated?
+
+Qubase can generate SQL for:
+
+- Database creation
+- Tables
+- Columns
+- Primary Keys
+- Foreign Keys
+- Constraints
+- Indexes
+- Default values
+- Relationships
+
+Generated SQL follows the syntax of the selected database system whenever possible.
+
+---
+
+# Forward Engineering workflow
+
+```text
+Visual Database Model
+          │
+          ▼
+Validate Database Model
+          │
+          ▼
+Choose Target DBMS
+          │
+          ▼
+Generate SQL
+          │
+          ▼
+Review SQL
+          │
+          ▼
+Export or Deploy
+```
+
+---
+
+# Generate SQL
+
+To generate SQL:
+
+1. Open your Database Schema.
+2. Complete the database design.
+3. Open **Forward Engineering**.
+4. Select the target database system.
+5. Validate the schema.
+6. Generate SQL.
+7. Review the generated script.
+8. Export or deploy the SQL.
+
+---
+
+# Supported output
+
+Depending on your project configuration, Qubase may generate:
+
+| Output | Description |
+| ------- | ----------- |
+| CREATE DATABASE | Create a new database |
+| CREATE TABLE | Create database tables |
+| ALTER TABLE | Modify existing tables |
+| CREATE INDEX | Create indexes |
+| FOREIGN KEY | Generate relationships |
+| CHECK | Validation constraints |
+| DEFAULT | Default values |
+
+---
+
+# Database compatibility
+
+Generated SQL adapts to the selected DBMS.
+
+Supported systems may include:
+
+- PostgreSQL
+- MySQL
+- Microsoft SQL Server
+
+Database-specific syntax is applied where applicable.
+
+---
+
+# SQL preview
+
+Before exporting, Qubase displays a SQL preview.
+
+The preview allows you to:
+
+- Review generated SQL
+- Detect potential issues
+- Copy SQL
+- Download SQL scripts
+
+Reviewing SQL before deployment is recommended.
+
+---
+
+# Validation
+
+Before SQL generation, Qubase performs validation checks.
+
+Examples include:
+
+- Missing Primary Keys
+- Invalid Foreign Keys
+- Duplicate table names
+- Missing data types
+- Unsupported constraints
+- Circular references
+
+Any detected issues should be resolved before deployment.
+
+---
+
+# Export SQL
+
+Generated SQL can be:
+
+- Copied to the clipboard
+- Downloaded as a SQL file
+- Shared with team members
+- Stored in version control
+
+---
+
+# Deployment
+
+Depending on your project configuration, generated SQL may be executed against a connected database.
+
+Before deployment:
+
+- Review SQL carefully.
+- Verify the target database.
+- Confirm the deployment environment.
+
+> [!WARNING]
+> Avoid deploying directly to production without testing the generated SQL in a development or staging environment.
+
+---
+
+# Best practices
+
+- Validate your schema before generating SQL.
+- Use meaningful table and column names.
+- Review SQL before deployment.
+- Keep generated SQL under version control.
+- Test SQL in a non-production environment first.
+
+---
+
+# Related guides
+
+- [Database Connection](/docs/database-engineering/database-connection)
+- [Reverse Engineering](/docs/database-engineering/reverse-engineering)
+- [Schema Comparison](/docs/database-engineering/schema-diff)
+- [Import & Export](/docs/database-engineering/import-export)
