@@ -1,21 +1,122 @@
 ---
 title: Workspaces
-description: Learn the essential Qubase workflow for workspaces.
+description: Organize database projects and collaborate with your team using shared workspaces.
 ---
 
 # Workspaces
 
-Workspaces is part of the Qubase Collaboration workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+A Workspace is the primary collaboration environment in Qubase.
 
-## Key guidance
+It provides a shared location where team members can organize projects, manage database schemas, and collaborate throughout the database engineering process.
 
-Confirm the current Workspace and Project context before continuing.
+Each Workspace can contain multiple projects and multiple members depending on your organization's needs.
 
-## Before you continue
+---
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+## Before you begin
+
+Before creating a Workspace, ensure that you have:
+
+- Created a Qubase account
+- Signed in successfully
+
+> [!NOTE]
+> Every project belongs to a Workspace. Create a Workspace before creating your first project.
+
+---
+
+## What is a Workspace?
+
+A Workspace helps organize related database projects into a single location.
+
+Typical examples include:
+
+- Company Workspace
+- Client Workspace
+- University Project
+- Personal Workspace
+
+Each Workspace keeps projects, members, and collaboration activities organized separately.
+
+---
+
+## Create a Workspace
+
+To create a Workspace:
+
+1. Open the Dashboard.
+2. Select **Create Workspace**.
+3. Enter a Workspace name.
+4. (Optional) Add a description.
+5. Confirm the creation.
+
+The new Workspace is immediately available for creating projects and inviting members.
+
+---
+
+## Workspace information
+
+Each Workspace includes:
+
+| Property | Description |
+| -------- | ----------- |
+| Name | Display name of the Workspace |
+| Description | Optional summary |
+| Owner | User who created the Workspace |
+| Members | Users who have access |
+| Projects | Database projects within the Workspace |
+| Created Date | Workspace creation date |
+
+---
+
+## Managing Workspaces
+
+Workspace owners can:
+
+- Update the Workspace name
+- Edit the description
+- Invite members
+- Remove members
+- Archive or delete the Workspace (when supported)
+
+Available actions depend on your permissions.
+
+---
+
+## Organizing projects
+
+A Workspace may contain multiple database projects.
+
+Example:
+
+```text
+Workspace
+│
+├── Inventory System
+├── CRM Database
+├── HR Management
+└── E-Commerce Platform
+```
+
+Keeping related projects together improves collaboration and organization.
+
+---
+
+## Best practices
+
+- Create separate Workspaces for different organizations or clients.
+- Use clear and descriptive Workspace names.
+- Invite only the members who need access.
+- Keep projects organized by purpose or team.
+
+> [!TIP]
+> A well-organized Workspace makes it easier to manage projects as your team grows.
+
+---
 
 ## Related guides
 
-- [Collaboration](/docs/collaboration)
-- [Documentation home](/docs)
+- [Projects](/docs/collaboration/projects)
+- [Invite Members](/docs/collaboration/invite-members)
+- [Project Members](/docs/collaboration/project-members)
+- [Version History](/docs/collaboration/version-history)

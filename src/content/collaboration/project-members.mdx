@@ -1,21 +1,133 @@
 ---
 title: Project Members
-description: Learn the essential Qubase workflow for project members.
+description: View and manage members, roles, and permissions within a project.
 ---
 
 # Project Members
 
-Project Members is part of the Qubase Collaboration workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Project Members allows you to view and manage the people who have access to a project.
 
-## Key guidance
+Each member can be assigned a role with specific permissions, ensuring that everyone has the appropriate level of access while collaborating on database engineering tasks.
 
-Confirm the current Workspace and Project context before continuing.
+---
 
-## Before you continue
+## Before you begin
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+Before managing project members, ensure that you have:
+
+- Created a Workspace
+- Created a Project
+- Invited members to the project
+- Permission to manage project members
+
+> [!NOTE]
+> Only users with the required permissions can update member roles or remove members from a project.
+
+---
+
+## What are Project Members?
+
+Project Members are users who have accepted an invitation and now have access to a project.
+
+Depending on their assigned role, members may be able to:
+
+- View database schemas
+- Edit database schemas
+- Generate SQL and DBML
+- Use AI Engineering features
+- Collaborate in real time
+- Leave comments
+- Review version history
+
+---
+
+## View project members
+
+To view project members:
+
+1. Open a Project.
+2. Navigate to **Members**.
+3. Review the member list.
+
+The member list displays all users who currently have access to the project.
+
+---
+
+## Member information
+
+Each member includes:
+
+| Property | Description |
+| -------- | ----------- |
+| Name | Member display name |
+| Email | Member email address |
+| Role | Assigned project role |
+| Status | Active or Pending |
+| Joined Date | Date the member joined |
+| Last Active | Most recent activity |
+
+---
+
+## Manage member roles
+
+Depending on your permissions, you can:
+
+- Change a member's role
+- Promote a member
+- Demote a member
+- Remove a member from the project
+
+Role changes take effect immediately.
+
+---
+
+## Remove a member
+
+To remove a member:
+
+1. Open the project member list.
+2. Select the member.
+3. Choose **Remove Member**.
+4. Confirm the action.
+
+After removal, the member no longer has access to the project.
+
+> [!WARNING]
+> Removing a member revokes their access to project resources. Ensure that important work has been transferred before removing access.
+
+---
+
+## Member roles
+
+Projects support different permission levels depending on your configuration.
+
+Typical roles include:
+
+| Role | Description |
+| ---- | ----------- |
+| Owner | Full project management access |
+| Editor | Can modify project content |
+| Viewer | Read-only access |
+
+The available roles may vary depending on your workspace configuration.
+
+---
+
+## Best practices
+
+- Assign the lowest level of access required.
+- Review project members regularly.
+- Remove inactive members when appropriate.
+- Update member roles as responsibilities change.
+
+> [!TIP]
+> Regularly reviewing project membership helps keep projects secure and well organized.
+
+---
 
 ## Related guides
 
-- [Collaboration](/docs/collaboration)
-- [Documentation home](/docs)
+- [Invite Members](/docs/collaboration/invite-members)
+- [Real-Time Collaboration](/docs/collaboration/real-time-collaboration)
+- [Comments & Mentions](/docs/collaboration/comments-and-mentions)
+- [Version History](/docs/collaboration/version-history)

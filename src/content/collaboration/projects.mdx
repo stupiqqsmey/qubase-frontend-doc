@@ -1,21 +1,126 @@
 ---
 title: Projects
-description: Learn the essential Qubase workflow for projects.
+description: Organize database schemas and collaborate with your team using projects in Qubase.
 ---
 
 # Projects
 
-Projects is part of the Qubase Collaboration workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+A Project is a dedicated workspace for designing, managing, and maintaining database schemas.
 
-## Key guidance
+Each project belongs to a Workspace and serves as the central location where team members collaborate on database engineering tasks.
 
-Confirm the current Workspace and Project context before continuing.
+Projects help organize related database schemas, making it easier to separate different systems, applications, or environments.
 
-## Before you continue
+---
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+## Before you begin
+
+Before creating a Project, ensure that you have:
+
+- Created a Workspace
+- Joined the Workspace with the required permissions
+
+> [!NOTE]
+> Every Project belongs to exactly one Workspace.
+
+---
+
+## What is a Project?
+
+A Project groups all resources related to a specific database solution.
+
+Depending on your workflow, a Project may include:
+
+- Database Schemas
+- AI Engineering sessions
+- Database Engineering tasks
+- Team collaboration
+- Version history
+
+Projects keep database work organized and separated from other teams or applications.
+
+---
+
+## Create a Project
+
+To create a Project:
+
+1. Open a Workspace.
+2. Select **Create Project**.
+3. Enter a project name.
+4. (Optional) Add a description.
+5. Confirm the creation.
+
+After the project is created, you can begin creating database schemas.
+
+---
+
+## Project information
+
+Each Project contains the following information.
+
+| Property | Description |
+| -------- | ----------- |
+| Name | Project name |
+| Description | Optional project summary |
+| Workspace | Parent workspace |
+| Members | Project collaborators |
+| Database Schemas | Database models within the project |
+| Created Date | Project creation date |
+| Last Updated | Most recent activity |
+
+---
+
+## Project organization
+
+A Project can contain multiple database schemas.
+
+Example:
+
+```text
+Project
+│
+├── Authentication Schema
+├── Sales Database
+├── Inventory Database
+└── Reporting Database
+```
+
+Keeping related schemas together improves organization and collaboration.
+
+---
+
+## Managing Projects
+
+Depending on your permissions, you can:
+
+- Rename a project
+- Update the description
+- Manage project members
+- Create database schemas
+- Archive a project
+- Delete a project (when supported)
+
+Available actions depend on your assigned role.
+
+---
+
+## Best practices
+
+- Create one project for each application or system.
+- Use clear project names.
+- Keep related database schemas together.
+- Archive inactive projects instead of deleting them.
+- Review project activity regularly.
+
+> [!TIP]
+> A well-structured project makes collaboration, version control, and database maintenance much easier.
+
+---
 
 ## Related guides
 
-- [Collaboration](/docs/collaboration)
-- [Documentation home](/docs)
+- [Workspaces](/docs/collaboration/workspaces)
+- [Invite Members](/docs/collaboration/invite-members)
+- [Project Members](/docs/collaboration/project-members)
+- [Real-Time Collaboration](/docs/collaboration/real-time-collaboration)

@@ -1,21 +1,132 @@
 ---
 title: Real-Time Collaboration
-description: Learn the essential Qubase workflow for real-time collaboration.
+description: Work together on database schemas with your team in real time.
 ---
 
 # Real-Time Collaboration
 
-Real-Time Collaboration is part of the Qubase Collaboration workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Real-Time Collaboration allows multiple team members to work on the same database schema simultaneously.
 
-## Key guidance
+Changes made by collaborators are synchronized across the project, helping teams design, review, and improve database schemas together without waiting for manual updates.
 
-Confirm the current Workspace and Project context before continuing.
+This enables faster teamwork while keeping everyone working from the same database model.
 
-## Before you continue
+---
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+## Before you begin
+
+Before collaborating in real time, ensure that you have:
+
+- Joined a Workspace
+- Access to a Project
+- Permission to edit the Database Schema
+
+> [!NOTE]
+> Real-Time Collaboration is available only to project members with the appropriate permissions.
+
+---
+
+# How Real-Time Collaboration works
+
+When multiple users open the same Database Schema:
+
+- Changes are synchronized automatically.
+- Updates become visible to other collaborators.
+- Team members work on a shared database model.
+- Everyone stays synchronized throughout the editing session.
+
+---
+
+## What can you collaborate on?
+
+Depending on your permissions, you can collaborate on:
+
+- Database Schemas
+- Tables
+- Columns
+- Relationships
+- Constraints
+- Database documentation
+- AI-generated database models
+
+---
+
+## Collaboration workflow
+
+```text
+Open Database Schema
+          │
+          ▼
+Join Collaboration Session
+          │
+          ▼
+Edit Database Model
+          │
+          ▼
+Changes Synchronize
+          │
+          ▼
+Continue Collaborating
+```
+
+---
+
+## Live synchronization
+
+As collaborators work on the same project, Qubase synchronizes supported changes automatically.
+
+Examples include:
+
+- Creating tables
+- Updating columns
+- Creating relationships
+- Editing constraints
+- Renaming database objects
+
+Synchronized changes become visible without requiring manual refresh.
+
+---
+
+## Collaboration awareness
+
+While collaborating, you may be able to see:
+
+- Active collaborators
+- Current editing activity
+- Recently synchronized changes
+
+The available collaboration indicators depend on your project configuration.
+
+---
+
+## Managing collaboration
+
+During a collaboration session, you can:
+
+- Continue editing
+- Review synchronized changes
+- Save your work
+- Leave the session at any time
+
+Changes remain available to authorized project members.
+
+---
+
+## Best practices
+
+- Communicate with team members before making major structural changes.
+- Review synchronized updates regularly.
+- Keep table and column naming consistent.
+- Validate the database model after significant changes.
+
+> [!TIP]
+> Working on smaller sections of a large database schema can help reduce editing conflicts and improve team productivity.
+
+---
 
 ## Related guides
 
-- [Collaboration](/docs/collaboration)
-- [Documentation home](/docs)
+- [Project Members](/docs/collaboration/project-members)
+- [Comments & Mentions](/docs/collaboration/comments-and-mentions)
+- [Version History](/docs/collaboration/version-history)
+- [Notifications](/docs/collaboration/notifications)
