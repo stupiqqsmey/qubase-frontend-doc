@@ -1,21 +1,137 @@
 ---
 title: Schema Recommendations
-description: Learn the essential Qubase workflow for schema recommendations.
+description: Analyze your database schema and receive AI-powered recommendations to improve structure, consistency, and maintainability.
 ---
 
 # Schema Recommendations
 
-Schema Recommendations is part of the Qubase AI Engineering workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Schema Recommendations use AI to review your database schema and identify opportunities for improvement.
 
-## Key guidance
+Instead of only validating the schema, Qubase AI analyzes the overall database design and provides recommendations that can improve consistency, readability, and maintainability.
 
-Treat AI-assisted output as guidance and review it before using it in a Database Schema or SQL workflow.
+Recommendations are intended to assist database engineers and should always be reviewed before implementation.
 
-## Before you continue
+---
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+## Before you begin
+
+Before generating recommendations, ensure that you have:
+
+- Created a Database Schema
+- Added the required tables and columns
+- Defined relationships where applicable
+
+> [!NOTE]
+> AI recommendations do not automatically modify your database schema.
+
+---
+
+## What can AI recommend?
+
+Qubase AI may provide recommendations for:
+
+- Table organization
+- Column naming
+- Missing Primary Keys
+- Missing Foreign Keys
+- Relationship improvements
+- Data type consistency
+- Naming consistency
+- Overall schema structure
+
+Recommendations are generated based on the current database model.
+
+---
+
+## AI workflow
+
+```text
+Analyze Database Schema
+          │
+          ▼
+Review Database Structure
+          │
+          ▼
+Detect Improvement Opportunities
+          │
+          ▼
+Generate Recommendations
+          │
+          ▼
+Review and Apply
+```
+
+---
+
+## Generate recommendations
+
+To generate schema recommendations:
+
+1. Open **AI Engineering**.
+2. Select **Schema Recommendations**.
+3. Choose the Database Schema.
+4. Start the analysis.
+5. Review the generated recommendations.
+6. Apply the recommendations that fit your design goals.
+
+---
+
+## Example recommendations
+
+Qubase AI may recommend improvements such as:
+
+| Recommendation | Purpose |
+| -------------- | ------- |
+| Add a Primary Key | Improve table identification |
+| Add a Foreign Key | Strengthen data integrity |
+| Rename a column | Improve readability |
+| Rename a table | Maintain naming consistency |
+| Standardize data types | Improve schema consistency |
+| Normalize duplicated data | Reduce redundancy |
+
+---
+
+## Review recommendations
+
+Before applying a recommendation, verify that it aligns with:
+
+- Business requirements
+- Application logic
+- Naming conventions
+- Database standards
+- Team guidelines
+
+AI recommendations should support your design, not replace engineering decisions.
+
+---
+
+## Benefits
+
+Schema Recommendations help you:
+
+- Improve database quality
+- Maintain consistent naming
+- Reduce redundant structures
+- Detect missing database components
+- Encourage database design best practices
+
+---
+
+## Best practices
+
+- Review every recommendation before applying it.
+- Keep naming conventions consistent across the schema.
+- Confirm recommendations with your development team.
+- Validate the updated schema before generating SQL.
+
+> [!TIP]
+> AI recommendations are most effective when your schema is already well structured and uses meaningful table and column names.
+
+---
 
 ## Related guides
 
-- [AI Engineering](/docs/ai-engineering)
-- [Documentation home](/docs)
+- [Relationship Suggestions](/docs/ai-engineering/relationship-suggestions)
+- [SQL Validation](/docs/ai-engineering/sql-validation)
+- [Database Explainer](/docs/ai-engineering/database-explainer)
+- [Visual Modeling](/docs/visual-modeling)

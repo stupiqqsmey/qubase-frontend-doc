@@ -1,21 +1,186 @@
 ---
 title: Prompt to ERD
-description: Learn the essential Qubase workflow for prompt to erd.
+description: Generate a complete Entity Relationship Diagram (ERD) from natural language using AI.
 ---
 
 # Prompt to ERD
 
-Prompt to ERD is part of the Qubase AI Engineering workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Prompt to ERD allows you to generate a complete Entity Relationship Diagram (ERD) by describing your database requirements in natural language.
 
-## Key guidance
+Instead of manually creating tables and relationships, simply describe your application or business domain, and Qubase AI generates an initial database model that you can review and refine.
 
-Treat AI-assisted output as guidance and review it before using it in a Database Schema or SQL workflow.
+This feature helps accelerate the early stages of database design.
 
-## Before you continue
+---
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+## Before you begin
+
+Before generating an ERD, ensure that you have:
+
+- Created a Workspace
+- Created a Project
+- Opened a Database Schema
+
+> [!NOTE]
+> AI-generated database models should always be reviewed before use in production.
+
+---
+
+## What can AI generate?
+
+Depending on your prompt, Qubase AI can generate:
+
+- Tables
+- Columns
+- Primary Keys
+- Foreign Keys
+- Relationships
+- Suggested data types
+- Initial database structure
+
+The generated model is automatically displayed on the ERD Canvas.
+
+---
+
+## Example prompt
+
+Example:
+
+```text
+Create an e-commerce database.
+
+Customers can place multiple orders.
+
+Each order contains multiple products.
+
+Products belong to categories.
+
+Customers can submit product reviews.
+```
+
+---
+
+## AI workflow
+
+```text
+Write Prompt
+      │
+      ▼
+AI Understands Requirements
+      │
+      ▼
+Generate Database Model
+      │
+      ▼
+Display ERD
+      │
+      ▼
+Review and Edit
+```
+
+---
+
+## Generate an ERD
+
+To generate an ERD:
+
+1. Open **AI Engineering**.
+2. Select **Prompt to ERD**.
+3. Describe your database requirements.
+4. Submit the prompt.
+5. Review the generated database model.
+6. Modify the ERD if necessary.
+7. Save the Database Schema.
+
+---
+
+## Reviewing the generated model
+
+After generation, review:
+
+- Table names
+- Column names
+- Primary Keys
+- Foreign Keys
+- Relationships
+- Data types
+- Overall database structure
+
+AI suggestions are intended to accelerate design, but they should always be verified.
+
+---
+
+## Writing better prompts
+
+Better prompts produce better database models.
+
+Good prompts usually include:
+
+- Business domain
+- Main entities
+- Relationships
+- Business rules
+- Special requirements
+
+Example:
+
+```text
+Build a university management system.
+
+Students enroll in multiple courses.
+
+Teachers teach multiple courses.
+
+Each course belongs to one department.
+
+Students receive grades for each course.
+```
+
+---
+
+## Benefits
+
+Prompt to ERD helps you:
+
+- Reduce manual database design
+- Create an initial database structure quickly
+- Explore different database designs
+- Learn database modeling concepts
+- Accelerate project development
+
+---
+
+## Limitations
+
+AI-generated schemas may require manual adjustments.
+
+Examples include:
+
+- Business-specific rules
+- Naming conventions
+- Performance optimizations
+- Complex constraints
+
+Always review the generated ERD before implementation.
+
+---
+
+## Best practices
+
+- Write clear and specific prompts.
+- Include business rules whenever possible.
+- Review every generated relationship.
+- Validate the database model before generating SQL.
+- Refine the ERD after generation.
+
+> [!TIP]
+> The more context you provide in your prompt, the more accurate and complete the generated ERD is likely to be.
+
+---
 
 ## Related guides
 
-- [AI Engineering](/docs/ai-engineering)
-- [Documentation home](/docs)
+- [Prompt to SQL](/docs/ai-engineering/prompt-to-sql)
+- [Prompt to DBML](/docs/ai-engineering/prompt-to-dbml)
+- [Schema Recommendations](/docs/ai-engineering/schema-recommendations)
+- [Visual Modeling](/docs/visual-modeling)

@@ -1,0 +1,187 @@
+---
+title: Prompt to DBML
+description: Generate DBML code from natural language using Qubase AI.
+---
+
+# Prompt to DBML
+
+Prompt to DBML enables you to generate Database Markup Language (DBML) from natural language.
+
+Instead of writing DBML manually, describe your database requirements in plain language, and Qubase AI generates a structured DBML representation that can be reviewed, edited, and synchronized with your database model.
+
+This feature helps database engineers quickly create maintainable database definitions.
+
+---
+
+## Before you begin
+
+Before generating DBML, ensure that you have:
+
+- Created a Workspace
+- Created a Project
+- Opened a Database Schema
+
+> [!NOTE]
+> AI-generated DBML should always be reviewed before importing or sharing.
+
+---
+
+## What can AI generate?
+
+Depending on your prompt, Qubase AI can generate:
+
+- Tables
+- Columns
+- Data types
+- Primary Keys
+- Foreign Keys
+- Relationships
+- Constraints
+- DBML references
+
+Generated DBML follows standard DBML syntax whenever possible.
+
+---
+
+## Example prompt
+
+```text
+Create a library management system.
+
+Books belong to categories.
+
+Members can borrow multiple books.
+
+Each borrowing record stores the borrow date and return date.
+
+A librarian manages borrowing transactions.
+```
+
+---
+
+## AI workflow
+
+```text
+Write Prompt
+      │
+      ▼
+AI Understands Requirements
+      │
+      ▼
+Generate DBML
+      │
+      ▼
+Review Output
+      │
+      ▼
+Copy or Save
+```
+
+---
+
+## Generate DBML
+
+To generate DBML:
+
+1. Open **AI Engineering**.
+2. Select **Prompt to DBML**.
+3. Enter your database requirements.
+4. Submit the prompt.
+5. Review the generated DBML.
+6. Edit the output if necessary.
+7. Save or copy the result.
+
+---
+
+## Example output
+
+```dbml
+Table users {
+  id uuid [pk]
+  full_name varchar
+  email varchar [unique]
+}
+
+Table orders {
+  id uuid [pk]
+  user_id uuid [ref: > users.id]
+  order_date timestamp
+}
+```
+
+The generated output can be modified before importing or exporting.
+
+---
+
+## Writing better prompts
+
+To improve generation quality:
+
+- Describe the business domain.
+- Mention the main entities.
+- Explain relationships.
+- Include important business rules.
+- Specify special requirements if needed.
+
+Example:
+
+```text
+Create a university database.
+
+Students enroll in many courses.
+
+Teachers teach multiple courses.
+
+Each department manages several courses.
+
+Store enrollment dates and grades.
+```
+
+---
+
+## Benefits
+
+Prompt to DBML helps you:
+
+- Generate DBML quickly
+- Reduce manual coding
+- Share database models easily
+- Improve consistency
+- Accelerate database documentation
+
+---
+
+## Limitations
+
+Generated DBML may require manual adjustments.
+
+Examples include:
+
+- Naming conventions
+- Database-specific rules
+- Complex constraints
+- Advanced indexing strategies
+
+Always review the generated output before using it.
+
+---
+
+## Best practices
+
+- Write clear prompts.
+- Include relationships explicitly.
+- Review generated references.
+- Validate the generated structure.
+- Keep DBML synchronized with your database model.
+
+> [!TIP]
+> The quality of the generated DBML depends on the clarity and completeness of your prompt.
+
+---
+
+## Related guides
+
+- [Prompt to ERD](/docs/ai-engineering/prompt-to-erd)
+- [Prompt to SQL](/docs/ai-engineering/prompt-to-sql)
+- [SQL & DBML Synchronization](/docs/visual-modeling/sql-dbml-sync)
+- [Database Engineering](/docs/database-engineering)

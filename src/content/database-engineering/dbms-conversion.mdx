@@ -1,21 +1,167 @@
 ---
 title: DBMS Conversion
-description: Learn the essential Qubase workflow for dbms conversion.
+description: Convert database schemas between supported database management systems while preserving structure and relationships.
 ---
 
 # DBMS Conversion
 
-DBMS Conversion is part of the Qubase Database Engineering workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+DBMS Conversion allows you to convert a database schema from one supported database management system (DBMS) to another.
 
-## Key guidance
+Instead of rebuilding your database manually, Qubase transforms your schema while adapting SQL syntax and database-specific features to the selected target system.
 
-Review the source and target Database Schema before applying engineering changes.
+This feature is useful when migrating applications, evaluating different database platforms, or standardizing database technologies across projects.
 
-## Before you continue
+---
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+## Before you begin
+
+Before converting a database schema, ensure that you have:
+
+- Created or imported a Database Schema
+- Validated the schema
+- Selected a supported source DBMS
+- Selected a supported target DBMS
+
+> [!NOTE]
+> Some database-specific features may not have direct equivalents in another DBMS.
+
+---
+
+## Supported conversions
+
+Depending on your project configuration, Qubase may support conversions such as:
+
+- PostgreSQL → MySQL
+- MySQL → PostgreSQL
+- PostgreSQL → SQL Server
+- SQL Server → PostgreSQL
+- MySQL → SQL Server
+- SQL Server → MySQL
+
+Support may expand as additional database systems are introduced.
+
+---
+
+## Conversion workflow
+
+```text
+Existing Database Schema
+           │
+           ▼
+Validate Schema
+           │
+           ▼
+Select Target DBMS
+           │
+           ▼
+Convert Schema
+           │
+           ▼
+Review Changes
+           │
+           ▼
+Generate SQL
+```
+
+---
+
+## Start a conversion
+
+To convert a database schema:
+
+1. Open **Database Engineering**.
+2. Select **DBMS Conversion**.
+3. Choose the source database system.
+4. Select the target database system.
+5. Validate the schema.
+6. Start the conversion.
+7. Review the converted schema.
+8. Generate SQL for the target database.
+
+---
+
+## What is converted?
+
+Qubase attempts to convert:
+
+| Object | Converted |
+| ------- | --------- |
+| Tables | ✅ |
+| Columns | ✅ |
+| Relationships | ✅ |
+| Primary Keys | ✅ |
+| Foreign Keys | ✅ |
+| Constraints | ✅ |
+| Indexes | ✅ |
+| Data Types | ✅ (when compatible) |
+
+---
+
+## Data type mapping
+
+Different database systems use different data types.
+
+Qubase automatically maps compatible data types whenever possible.
+
+Example:
+
+| PostgreSQL | MySQL |
+| ---------- | ----- |
+| UUID | CHAR(36) or compatible type |
+| BOOLEAN | BOOLEAN / TINYINT(1) |
+| SERIAL | AUTO_INCREMENT |
+| TEXT | TEXT |
+
+Actual mappings depend on the selected target database.
+
+---
+
+## Review converted schema
+
+After conversion, review:
+
+- Data types
+- Constraints
+- Relationships
+- Default values
+- Generated SQL
+
+Some objects may require manual adjustments depending on database-specific capabilities.
+
+---
+
+## Limitations
+
+Certain database features may not convert automatically.
+
+Examples include:
+
+- Proprietary data types
+- Stored procedures
+- Database extensions
+- Triggers
+- Functions
+
+Review the generated schema before deployment.
+
+---
+
+## Best practices
+
+- Validate your schema before conversion.
+- Review all converted objects.
+- Test generated SQL in the target database.
+- Confirm data type compatibility.
+- Keep a backup of the original schema.
+
+> [!WARNING]
+> Always verify converted SQL before deploying to production, especially when migrating between different database platforms.
+
+---
 
 ## Related guides
 
-- [Database Engineering](/docs/database-engineering)
-- [Documentation home](/docs)
+- [Forward Engineering](/docs/database-engineering/forward-engineering)
+- [Schema Comparison](/docs/database-engineering/schema-diff)
+- [Database Migration](/docs/database-engineering/migrations)
+- [Import & Export](/docs/database-engineering/import-export)

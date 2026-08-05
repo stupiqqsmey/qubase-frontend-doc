@@ -1,21 +1,152 @@
 ---
 title: Schema Introspection
-description: Learn the essential Qubase workflow for schema introspection.
+description: Inspect and analyze the structure of an existing database schema without modifying the database.
 ---
 
 # Schema Introspection
 
-Schema Introspection is part of the Qubase Database Engineering workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Schema Introspection allows Qubase to inspect the structure of an existing database and retrieve metadata about its objects.
 
-## Key guidance
+Instead of manually exploring tables and relationships, Qubase analyzes the database schema and presents the information in a structured format.
 
-Review the source and target Database Schema before applying engineering changes.
+Schema Introspection is commonly used before Reverse Engineering, Schema Comparison, or Database Migration.
 
-## Before you continue
+---
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+## Before you begin
+
+Before performing schema introspection, ensure that you have:
+
+- Created a database connection
+- Successfully connected to a supported database
+- Permission to read database metadata
+
+> [!NOTE]
+> Schema Introspection is a read-only operation. It never changes your database.
+
+---
+
+## What is analyzed?
+
+Qubase can inspect various database objects, including:
+
+- Schemas
+- Tables
+- Columns
+- Data Types
+- Primary Keys
+- Foreign Keys
+- Constraints
+- Indexes
+- Views (when supported)
+
+The available metadata depends on the selected database system.
+
+---
+
+## Introspection workflow
+
+```text
+Connect Database
+        │
+        ▼
+Read Metadata
+        │
+        ▼
+Analyze Objects
+        │
+        ▼
+Display Database Structure
+```
+
+---
+
+## Perform Schema Introspection
+
+To inspect an existing database:
+
+1. Open **Database Engineering**.
+2. Select **Schema Introspection**.
+3. Choose an existing database connection.
+4. Select the target database or schema.
+5. Start the analysis.
+6. Review the detected database objects.
+
+The analyzed metadata becomes available for further engineering tasks.
+
+---
+
+## Retrieved information
+
+During introspection, Qubase may retrieve:
+
+| Object | Description |
+| ------- | ----------- |
+| Schemas | Database namespaces |
+| Tables | Database tables |
+| Columns | Table fields |
+| Relationships | Foreign key relationships |
+| Constraints | Validation rules |
+| Indexes | Database indexes |
+| Views | Read-only database views |
+
+---
+
+## Why use Schema Introspection?
+
+Schema Introspection helps you:
+
+- Understand existing databases
+- Verify database structures
+- Prepare for Reverse Engineering
+- Detect missing objects
+- Review database metadata
+- Validate schema consistency
+
+---
+
+## Read-only analysis
+
+Schema Introspection never:
+
+- Creates tables
+- Deletes objects
+- Updates data
+- Executes SQL modifications
+
+Its purpose is to inspect and understand the database structure.
+
+---
+
+## Validation
+
+During analysis, Qubase may report:
+
+- Missing Primary Keys
+- Invalid Foreign Keys
+- Unsupported data types
+- Duplicate object names
+- Inconsistent metadata
+
+These findings help identify potential issues before further engineering tasks.
+
+---
+
+## Best practices
+
+- Inspect the database before importing it.
+- Review detected relationships carefully.
+- Compare the analyzed structure with your documentation.
+- Use introspection before Reverse Engineering for large databases.
+
+> [!TIP]
+> Running Schema Introspection regularly helps ensure your documentation stays aligned with the actual database structure.
+
+---
 
 ## Related guides
 
-- [Database Engineering](/docs/database-engineering)
-- [Documentation home](/docs)
+- [Database Connection](/docs/database-engineering/database-connection)
+- [Reverse Engineering](/docs/database-engineering/reverse-engineering)
+- [Schema Comparison](/docs/database-engineering/schema-diff)
+- [Database Migration](/docs/database-engineering/migrations)

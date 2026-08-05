@@ -1,21 +1,166 @@
 ---
-title: Import and Export
-description: Learn the essential Qubase workflow for import and export.
+title: Import & Export
+description: Import existing database models into Qubase or export your database schemas in supported formats.
 ---
 
-# Import and Export
+# Import & Export
 
-Import and Export is part of the Qubase Database Engineering workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Import and Export allow you to move database schemas between Qubase and other database tools.
 
-## Key guidance
+Whether you are migrating an existing project, sharing a database design with your team, or creating backups, Qubase provides flexible import and export capabilities.
 
-Review the source and target Database Schema before applying engineering changes.
+---
 
-## Before you continue
+## Before you begin
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+Before importing or exporting a database schema, ensure that you have:
 
-## Related guides
+- Created a Workspace
+- Created a Project
+- Opened a Database Schema
 
-- [Database Engineering](/docs/database-engineering)
-- [Documentation home](/docs)
+> [!NOTE]
+> Supported formats depend on your Qubase edition and project configuration.
+
+---
+
+# Import database models
+
+Importing allows you to continue working with existing database designs inside Qubase.
+
+Supported import sources may include:
+
+- SQL files
+- DBML files
+- Existing database connections
+- Previously exported Qubase projects
+
+After importing, the database model becomes editable on the ERD Canvas.
+
+---
+
+## Import workflow
+
+```text
+Choose Import Source
+          │
+          ▼
+Upload File or Connect Database
+          │
+          ▼
+Validate Content
+          │
+          ▼
+Generate Database Model
+          │
+          ▼
+Open in ERD Canvas
+```
+
+---
+
+## Import process
+
+To import a database model:
+
+1. Open **Database Engineering**.
+2. Select **Import**.
+3. Choose the import source.
+4. Upload the file or select an existing database connection.
+5. Validate the imported structure.
+6. Complete the import.
+
+The imported schema is added to your project.
+
+---
+
+# Export database models
+
+Exporting allows you to share or deploy your database design.
+
+Supported export formats may include:
+
+- SQL
+- DBML
+- JSON
+- Project Backup
+
+The available formats depend on your project configuration.
+
+---
+
+## Export workflow
+
+```text
+Database Schema
+        │
+        ▼
+Select Export Format
+        │
+        ▼
+Generate Output
+        │
+        ▼
+Download or Share
+```
+
+---
+
+## Export process
+
+To export a database model:
+
+1. Open a Database Schema.
+2. Select **Export**.
+3. Choose the desired format.
+4. Review the generated output.
+5. Download the exported file.
+
+---
+
+# Supported formats
+
+| Format | Purpose |
+| ------- | ------- |
+| SQL | Deploy to a database server |
+| DBML | Share database models with DBML-compatible tools |
+| JSON | Integrate with external applications |
+| Project Backup | Archive an entire database project |
+
+---
+
+# Validation
+
+Before importing or exporting, Qubase validates the database model.
+
+Validation may include:
+
+- Invalid SQL syntax
+- Unsupported DBML features
+- Duplicate table names
+- Missing relationships
+- Incomplete database objects
+
+Validation helps ensure that imported and exported data remains consistent.
+
+---
+
+# Best practices
+
+- Validate imported schemas before editing.
+- Review exported SQL before deployment.
+- Keep backup copies of important projects.
+- Export the latest version after major schema changes.
+- Use version control for exported database scripts.
+
+> [!TIP]
+> Export database models regularly to simplify collaboration, backups, and deployment workflows.
+
+---
+
+# Related guides
+
+- [Reverse Engineering](/docs/database-engineering/reverse-engineering)
+- [Forward Engineering](/docs/database-engineering/forward-engineering)
+- [Database Migration](/docs/database-engineering/migrations)
+- [Visual Modeling](/docs/visual-modeling)

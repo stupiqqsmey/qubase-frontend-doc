@@ -1,21 +1,179 @@
 ---
-title: Schema Diff
-description: Learn the essential Qubase workflow for schema diff.
+title: Schema Comparison
+description: Compare two database schemas to identify structural differences before applying changes.
 ---
 
-# Schema Diff
+# Schema Comparison
 
-Schema Diff is part of the Qubase Database Engineering workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Schema Comparison allows you to compare two database schemas and identify structural differences between them.
 
-## Key guidance
+This feature helps you understand what has changed before updating a database, generating migration scripts, or synchronizing environments.
 
-Review the source and target Database Schema before applying engineering changes.
+Instead of manually reviewing SQL files, Qubase automatically detects additions, modifications, and deletions across database objects.
 
-## Before you continue
+---
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+## Before you begin
+
+Before comparing schemas, ensure that you have:
+
+- Connected to one or more databases
+- Selected two database schemas or versions
+- Read access to both schemas
+
+> [!NOTE]
+> Schema Comparison analyzes database structures only. It does not modify either schema.
+
+---
+
+## What can be compared?
+
+Qubase compares many types of database objects, including:
+
+- Tables
+- Columns
+- Data types
+- Primary Keys
+- Foreign Keys
+- Constraints
+- Indexes
+- Views (when supported)
+
+---
+
+## Comparison workflow
+
+```text
+Select Source Schema
+          │
+          ▼
+Select Target Schema
+          │
+          ▼
+Analyze Structures
+          │
+          ▼
+Detect Differences
+          │
+          ▼
+Review Results
+```
+
+---
+
+## Perform a comparison
+
+To compare two schemas:
+
+1. Open **Database Engineering**.
+2. Select **Schema Comparison**.
+3. Choose the source schema.
+4. Choose the target schema.
+5. Start the comparison.
+6. Review the detected differences.
+
+---
+
+## Difference types
+
+Qubase categorizes detected changes into several groups.
+
+| Change Type | Description |
+| ----------- | ----------- |
+| Added | New database objects |
+| Removed | Deleted database objects |
+| Modified | Existing objects that have changed |
+| Renamed | Objects whose names have changed (when detected) |
+
+---
+
+## Example comparison
+
+```text
+Source Schema
+--------------
+Users
+Orders
+Products
+
+Target Schema
+--------------
+Users
+Orders
+Products
+Categories
+```
+
+Comparison result:
+
+```text
++ Categories (Added)
+```
+
+Another example:
+
+```text
+Users.email
+
+VARCHAR(100)
+
+↓
+
+VARCHAR(255)
+```
+
+Comparison result:
+
+```text
+Modified Column
+```
+
+---
+
+## Review changes
+
+After the comparison completes, Qubase displays the detected differences.
+
+You can review:
+
+- Added tables
+- Removed tables
+- Modified columns
+- Updated relationships
+- Changed constraints
+- Index modifications
+
+This makes it easier to understand the impact of upcoming database updates.
+
+---
+
+## Why use Schema Comparison?
+
+Schema Comparison helps you:
+
+- Detect unexpected database changes
+- Validate deployment readiness
+- Review schema updates
+- Prepare migration scripts
+- Keep environments synchronized
+
+---
+
+## Best practices
+
+- Compare development and production schemas before deployment.
+- Review all detected differences carefully.
+- Confirm unexpected changes with your team.
+- Keep schema versions under version control.
+
+> [!TIP]
+> Compare schemas regularly to prevent configuration drift between development, staging, and production environments.
+
+---
 
 ## Related guides
 
-- [Database Engineering](/docs/database-engineering)
-- [Documentation home](/docs)
+- [Schema Introspection](/docs/database-engineering/schema-introspection)
+- [Database Migration](/docs/database-engineering/migrations)
+- [Forward Engineering](/docs/database-engineering/forward-engineering)
+- [Import & Export](/docs/database-engineering/import-export)

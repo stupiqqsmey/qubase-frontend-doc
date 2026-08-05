@@ -1,21 +1,165 @@
 ---
-title: Migrations
-description: Learn the essential Qubase workflow for migrations.
+title: Database Migration
+description: Manage and apply database schema changes safely using database migrations.
 ---
 
-# Migrations
+# Database Migration
 
-Migrations is part of the Qubase Database Engineering workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Database Migration allows you to apply changes to a database schema in a controlled and repeatable way.
 
-## Key guidance
+Instead of manually modifying database structures, migrations record each schema change as a sequence of operations that can be reviewed, versioned, and executed consistently.
 
-Review the source and target Database Schema before applying engineering changes.
+Using migrations helps keep development, staging, and production databases synchronized.
 
-## Before you continue
+---
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+## Before you begin
+
+Before creating a migration, ensure that you have:
+
+- Completed your database design
+- Validated the database schema
+- Connected to the target database (if deployment is required)
+
+> [!NOTE]
+> Database Migrations modify the database structure. Always review migration scripts before applying them.
+
+---
+
+## Why use migrations?
+
+Database Migrations help you:
+
+- Track schema changes
+- Synchronize multiple environments
+- Maintain version history
+- Reduce deployment errors
+- Collaborate with team members
+
+---
+
+## Migration workflow
+
+```text
+Modify Database Model
+          │
+          ▼
+Detect Schema Changes
+          │
+          ▼
+Generate Migration
+          │
+          ▼
+Review Migration
+          │
+          ▼
+Apply Migration
+```
+
+---
+
+## Create a migration
+
+To create a migration:
+
+1. Open **Database Engineering**.
+2. Select **Database Migration**.
+3. Compare the current schema with the target schema.
+4. Generate a migration.
+5. Review the generated operations.
+6. Save the migration.
+
+---
+
+## Migration operations
+
+A migration may contain operations such as:
+
+| Operation | Description |
+| --------- | ----------- |
+| Create Table | Create a new table |
+| Drop Table | Remove an existing table |
+| Add Column | Add a new column |
+| Remove Column | Delete a column |
+| Rename Column | Rename a column |
+| Modify Column | Change a column definition |
+| Add Constraint | Create a new constraint |
+| Remove Constraint | Delete an existing constraint |
+| Create Index | Create a new index |
+| Drop Index | Remove an existing index |
+
+---
+
+## Review before applying
+
+Before applying a migration, review:
+
+- Added objects
+- Removed objects
+- Modified columns
+- Constraint changes
+- Relationship updates
+
+Carefully reviewing migrations helps prevent unintended database changes.
+
+---
+
+## Apply a migration
+
+After reviewing the migration:
+
+1. Select the target database.
+2. Confirm the migration.
+3. Apply the changes.
+4. Verify the updated database schema.
+
+Once completed, the database structure reflects the new schema.
+
+---
+
+## Migration history
+
+Each migration should be stored as part of your project's history.
+
+Maintaining migration history allows you to:
+
+- Understand previous database changes
+- Review schema evolution
+- Collaborate with team members
+- Track deployment history
+
+---
+
+## Validation
+
+Before applying a migration, Qubase validates:
+
+- Invalid operations
+- Missing dependencies
+- Broken relationships
+- Constraint conflicts
+- Unsupported modifications
+
+Validation helps reduce migration failures.
+
+---
+
+## Best practices
+
+- Review every migration before applying it.
+- Test migrations in a development environment first.
+- Keep migration history under version control.
+- Apply migrations in the correct order.
+- Back up important databases before major schema updates.
+
+> [!WARNING]
+> Applying migrations directly to production databases without testing may result in unexpected downtime or data loss.
+
+---
 
 ## Related guides
 
-- [Database Engineering](/docs/database-engineering)
-- [Documentation home](/docs)
+- [Schema Comparison](/docs/database-engineering/schema-diff)
+- [Forward Engineering](/docs/database-engineering/forward-engineering)
+- [Database Connection](/docs/database-engineering/database-connection)
+- [Import & Export](/docs/database-engineering/import-export)

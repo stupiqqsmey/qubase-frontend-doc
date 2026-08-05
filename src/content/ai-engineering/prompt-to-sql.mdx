@@ -1,0 +1,183 @@
+---
+title: Prompt to SQL
+description: Generate SQL statements from natural language using Qubase AI.
+---
+
+# Prompt to SQL
+
+Prompt to SQL allows you to generate SQL statements by describing your database requirements in natural language.
+
+Instead of manually writing SQL, simply explain what you want to create, and Qubase AI generates SQL that can be reviewed, edited, and executed.
+
+This feature helps developers prototype database structures more quickly while reducing repetitive SQL writing.
+
+---
+
+## Before you begin
+
+Before generating SQL, ensure that you have:
+
+- Created a Workspace
+- Created a Project
+- Opened a Database Schema
+- Selected the target DBMS (if required)
+
+> [!NOTE]
+> AI-generated SQL should always be reviewed before executing it against a database.
+
+---
+
+## What can AI generate?
+
+Depending on your prompt, Qubase AI may generate:
+
+- CREATE TABLE statements
+- ALTER TABLE statements
+- Primary Keys
+- Foreign Keys
+- Constraints
+- Indexes
+- Relationships
+
+Generated SQL follows the selected database system whenever possible.
+
+---
+
+## Example prompt
+
+```text
+Create an e-commerce database.
+
+Customers can place multiple orders.
+
+Each order contains multiple products.
+
+Products belong to categories.
+
+Each customer has a unique email address.
+```
+
+---
+
+## AI workflow
+
+```text
+Write Prompt
+      │
+      ▼
+AI Understands Requirements
+      │
+      ▼
+Generate SQL
+      │
+      ▼
+Review SQL
+      │
+      ▼
+Copy or Save
+```
+
+---
+
+## Generate SQL
+
+To generate SQL:
+
+1. Open **AI Engineering**.
+2. Select **Prompt to SQL**.
+3. Describe your database requirements.
+4. Submit the prompt.
+5. Review the generated SQL.
+6. Edit the SQL if necessary.
+7. Save or copy the result.
+
+---
+
+## Reviewing generated SQL
+
+Before using generated SQL, review:
+
+- Table names
+- Column names
+- Data types
+- Primary Keys
+- Foreign Keys
+- Constraints
+- Indexes
+
+Always confirm that the generated SQL matches your business requirements.
+
+---
+
+## Writing effective prompts
+
+For better results:
+
+- Describe the business domain.
+- Mention important entities.
+- Explain relationships.
+- Include validation rules.
+- Specify important constraints.
+
+Example:
+
+```text
+Create a hospital management database.
+
+Patients can have multiple appointments.
+
+Doctors manage appointments.
+
+Each appointment belongs to one department.
+
+Store patient contact information.
+```
+
+---
+
+## Benefits
+
+Prompt to SQL helps you:
+
+- Generate SQL faster
+- Reduce repetitive coding
+- Prototype database structures
+- Learn SQL syntax
+- Improve development productivity
+
+---
+
+## Limitations
+
+Generated SQL may require manual refinement.
+
+Examples include:
+
+- Database-specific optimizations
+- Naming conventions
+- Performance tuning
+- Custom constraints
+
+Review generated SQL before deployment.
+
+---
+
+## Best practices
+
+- Use detailed prompts.
+- Validate generated SQL.
+- Review relationships carefully.
+- Test SQL in a development environment.
+- Keep generated SQL under version control.
+
+> [!TIP]
+> Better prompts produce more accurate SQL generation.
+
+---
+
+## Related guides
+
+- [Prompt to ERD](/docs/ai-engineering/prompt-to-erd)
+- [Prompt to DBML](/docs/ai-engineering/prompt-to-dbml)
+- [SQL Validation](/docs/ai-engineering/sql-validation)
+- [Database Engineering](/docs/database-engineering)

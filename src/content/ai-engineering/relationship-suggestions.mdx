@@ -1,21 +1,150 @@
 ---
 title: Relationship Suggestions
-description: Learn the essential Qubase workflow for relationship suggestions.
+description: Use AI to identify and recommend relationships between database tables based on your schema.
 ---
 
 # Relationship Suggestions
 
-Relationship Suggestions is part of the Qubase AI Engineering workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Relationship Suggestions use AI to analyze your database schema and recommend potential relationships between tables.
 
-## Key guidance
+Instead of manually identifying every connection, Qubase AI examines table structures, column names, and existing database objects to suggest relationships that may improve your database design.
 
-Treat AI-assisted output as guidance and review it before using it in a Database Schema or SQL workflow.
+AI suggestions are intended to assist your design process and should always be reviewed before applying them.
 
-## Before you continue
+---
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+## Before you begin
+
+Before requesting relationship suggestions, ensure that you have:
+
+- Created a Database Schema
+- Added at least two tables
+- Defined the required columns
+
+> [!NOTE]
+> AI suggestions are recommendations only. You remain responsible for reviewing and confirming every relationship.
+
+---
+
+## What can AI suggest?
+
+Qubase AI may recommend:
+
+- One-to-One relationships
+- One-to-Many relationships
+- Many-to-Many relationships
+- Missing Foreign Keys
+- Related tables
+- Junction tables
+- Relationship improvements
+
+Suggestions are based on the current database model.
+
+---
+
+## Example
+
+Suppose your schema contains the following tables:
+
+```text
+Customers
+Orders
+Products
+Order_Items
+```
+
+Qubase AI may recommend:
+
+```text
+Customers
+      │
+      └────────────► Orders
+
+Orders
+      │
+      └────────────► Order_Items
+
+Products
+      │
+      └────────────► Order_Items
+```
+
+---
+
+## AI workflow
+
+```text
+Analyze Database Schema
+          │
+          ▼
+Detect Related Tables
+          │
+          ▼
+Recommend Relationships
+          │
+          ▼
+Review Suggestions
+          │
+          ▼
+Apply or Ignore
+```
+
+---
+
+## Generate suggestions
+
+To generate relationship suggestions:
+
+1. Open **AI Engineering**.
+2. Select **Relationship Suggestions**.
+3. Choose the Database Schema.
+4. Start the analysis.
+5. Review the suggested relationships.
+6. Apply the suggestions you want to keep.
+
+---
+
+## Review suggestions
+
+Before accepting a recommendation, verify:
+
+- The business logic
+- Primary Keys
+- Foreign Keys
+- Relationship type
+- Cardinality
+
+AI recommendations should support your application's requirements.
+
+---
+
+## Benefits
+
+Relationship Suggestions help you:
+
+- Discover missing relationships
+- Reduce manual database analysis
+- Improve schema consistency
+- Accelerate database design
+- Learn database modeling best practices
+
+---
+
+## Best practices
+
+- Review every suggestion before applying it.
+- Confirm that each relationship reflects real business requirements.
+- Verify Primary Keys and Foreign Keys.
+- Ignore recommendations that do not match your application logic.
+
+> [!TIP]
+> AI recommendations are most accurate when tables and columns use clear, meaningful names.
+
+---
 
 ## Related guides
 
-- [AI Engineering](/docs/ai-engineering)
-- [Documentation home](/docs)
+- [Relationships](/docs/visual-modeling/relationships)
+- [Cardinality](/docs/visual-modeling/cardinality)
+- [Schema Recommendations](/docs/ai-engineering/schema-recommendations)
+- [Database Explainer](/docs/ai-engineering/database-explainer)

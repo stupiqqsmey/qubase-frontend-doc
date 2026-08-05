@@ -1,21 +1,163 @@
 ---
 title: SQL Validation
-description: Learn the essential Qubase workflow for sql validation.
+description: Validate SQL statements, detect issues, and receive AI-powered recommendations before executing queries.
 ---
 
 # SQL Validation
 
-SQL Validation is part of the Qubase AI Engineering workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+SQL Validation helps you analyze SQL statements before they are executed.
 
-## Key guidance
+Instead of manually checking every query, Qubase AI validates SQL syntax, identifies potential issues, and provides recommendations to improve correctness and compatibility.
 
-Treat AI-assisted output as guidance and review it before using it in a Database Schema or SQL workflow.
+This feature helps reduce common SQL mistakes and improves database reliability.
 
-## Before you continue
+---
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+## Before you begin
 
-## Related guides
+Before validating SQL, ensure that you have:
 
-- [AI Engineering](/docs/ai-engineering)
-- [Documentation home](/docs)
+- Created a Workspace
+- Created a Project
+- Selected a target DBMS (if required)
+
+> [!NOTE]
+> SQL Validation analyzes SQL statements only. It does not execute SQL against your database.
+
+---
+
+# What can AI validate?
+
+Qubase AI can analyze various aspects of SQL, including:
+
+- SQL syntax
+- Table references
+- Column references
+- Primary Keys
+- Foreign Keys
+- Constraints
+- Data types
+- Statement structure
+
+The available validation checks depend on the selected database system.
+
+---
+
+# Example SQL
+
+```sql
+CREATE TABLE orders (
+    id UUID PRIMARY KEY,
+    customer_id UUID,
+    total DECIMAL,
+    FOREIGN KEY (customer_id)
+        REFERENCES customers(id)
+);
+```
+
+---
+
+# AI workflow
+
+```text
+Paste SQL
+      │
+      ▼
+AI Parses SQL
+      │
+      ▼
+Validate Structure
+      │
+      ▼
+Detect Issues
+      │
+      ▼
+Show Suggestions
+```
+
+---
+
+# Validate SQL
+
+To validate SQL:
+
+1. Open **AI Engineering**.
+2. Select **SQL Validation**.
+3. Paste or write your SQL statement.
+4. Start validation.
+5. Review detected issues.
+6. Apply recommended changes if needed.
+
+---
+
+# Validation results
+
+Qubase categorizes validation results into different levels.
+
+| Status | Meaning |
+| ------- | ------- |
+| Success | No issues detected |
+| Warning | SQL is valid but may require review |
+| Error | SQL contains problems that should be fixed |
+
+---
+
+# Common validation checks
+
+Qubase AI may detect:
+
+- Missing Primary Keys
+- Missing Foreign Keys
+- Duplicate column names
+- Invalid data types
+- Incorrect SQL syntax
+- Undefined tables
+- Undefined columns
+- Invalid constraints
+
+---
+
+# AI recommendations
+
+When issues are detected, Qubase AI provides recommendations that may include:
+
+- Correct SQL syntax
+- Suggested data types
+- Constraint improvements
+- Relationship corrections
+- Naming improvements
+
+Recommendations are intended to assist your review and should be verified before deployment.
+
+---
+
+# Benefits
+
+SQL Validation helps you:
+
+- Detect SQL mistakes early
+- Improve database quality
+- Reduce debugging time
+- Learn SQL best practices
+- Increase confidence before deployment
+
+---
+
+# Best practices
+
+- Validate SQL before executing it.
+- Review AI recommendations carefully.
+- Confirm generated SQL matches your requirements.
+- Test important SQL scripts in a development environment.
+
+> [!TIP]
+> Running SQL Validation before deployment helps identify problems early and reduces the risk of database errors.
+
+---
+
+# Related guides
+
+- [Prompt to SQL](/docs/ai-engineering/prompt-to-sql)
+- [Error Analysis](/docs/ai-engineering/error-analysis)
+- [Database Explainer](/docs/ai-engineering/database-explainer)
+- [Forward Engineering](/docs/database-engineering/forward-engineering)
