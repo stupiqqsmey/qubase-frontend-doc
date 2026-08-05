@@ -1,21 +1,200 @@
 ---
 title: ERD Canvas
-description: Learn the essential Qubase workflow for erd canvas.
+description: Design and manage database schemas visually using the Qubase ERD Canvas.
 ---
 
 # ERD Canvas
 
-ERD Canvas is part of the Qubase Visual Modeling workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+The ERD Canvas is the primary workspace for designing database schemas in Qubase.
 
-## Key guidance
+It provides a visual environment where you can create tables, define relationships, organize layouts, and manage your database structure without writing SQL manually.
 
-Use the ERD Canvas, SQL, and DBML deliberately so the Database Schema remains clear and reviewable.
+Every Database Schema is designed inside the ERD Canvas.
 
-## Before you continue
+## Before you begin
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+Before using the ERD Canvas, ensure that you have:
 
-## Related guides
+- Created a Workspace
+- Created a Project
+- Created a Database Schema
+- Selected a database model type
 
-- [Visual Modeling](/docs/visual-modeling)
-- [Documentation home](/docs)
+> [!NOTE]
+> The ERD Canvas automatically opens after creating a new Database Schema.
+
+---
+
+## Canvas overview
+
+The ERD Canvas consists of several areas that work together during database design.
+
+| Area | Description |
+| ---- | ----------- |
+| Toolbar | Quick actions for creating and editing database objects |
+| Canvas | Main workspace for designing the ERD |
+| Mini Map | Navigate large database diagrams |
+| Properties Panel | Edit the selected object |
+| Zoom Controls | Zoom in, zoom out, and fit the canvas |
+| Context Menu | Access additional actions for selected objects |
+
+---
+
+## What you can do on the canvas
+
+Using the ERD Canvas, you can:
+
+- Create new tables
+- Rename database objects
+- Move tables freely
+- Resize tables
+- Create relationships
+- Edit columns
+- Configure keys
+- Organize layouts
+- Delete objects
+- Save changes automatically
+
+---
+
+## Creating a table
+
+To add a new table:
+
+1. Open the ERD Canvas.
+2. Click **Add Table** from the toolbar.
+3. Enter a table name.
+4. Add columns.
+5. Define a Primary Key.
+6. Save the table.
+
+The new table immediately appears on the canvas.
+
+---
+
+## Selecting objects
+
+Click any object on the canvas to display its properties.
+
+You can select:
+
+- Tables
+- Relationships
+- Columns
+- Connection lines
+
+The Properties Panel updates automatically based on the selected object.
+
+---
+
+## Moving tables
+
+Tables can be repositioned freely.
+
+Simply:
+
+1. Select a table.
+2. Drag it to a new location.
+3. Release the mouse button.
+
+Relationship lines update automatically.
+
+> [!TIP]
+> Organize related tables close together to improve readability.
+
+---
+
+## Zooming and navigation
+
+Large database schemas can contain dozens or even hundreds of tables.
+
+Use the zoom controls to:
+
+- Zoom In
+- Zoom Out
+- Reset Zoom
+- Fit to Screen
+
+The Mini Map provides a quick overview of the entire diagram.
+
+---
+
+## Working with relationships
+
+Relationships can be created directly on the canvas.
+
+Simply:
+
+1. Select a table.
+2. Drag from a relationship handle.
+3. Connect to another table.
+4. Configure the relationship.
+
+Supported relationship types include:
+
+- One-to-One
+- One-to-Many
+- Many-to-Many
+
+---
+
+## Editing objects
+
+Double-click an object to edit it.
+
+Depending on the selected item, you can update:
+
+- Table name
+- Column name
+- Data type
+- Constraints
+- Relationship settings
+
+Changes are reflected immediately on the canvas.
+
+---
+
+## Automatic saving
+
+Qubase automatically saves changes while you work.
+
+This reduces the risk of losing progress during database design.
+
+> [!NOTE]
+> Some actions may require confirmation before permanent changes are applied.
+
+---
+
+## Keyboard shortcuts
+
+The ERD Canvas supports common keyboard shortcuts.
+
+| Shortcut | Action |
+| -------- | ------ |
+| Ctrl + C | Copy selected table |
+| Ctrl + V | Paste |
+| Delete | Delete selected object |
+| Ctrl + Z | Undo |
+| Ctrl + Shift + Z | Redo |
+| Space | Pan the canvas |
+
+---
+
+## Best practices
+
+- Keep related tables together.
+- Avoid overlapping relationship lines.
+- Use meaningful table names.
+- Define Primary Keys before relationships.
+- Review the diagram regularly as it grows.
+
+---
+
+## Next steps
+
+After learning the ERD Canvas, continue with:
+
+- [Create Tables](/docs/visual-modeling/create-tables)
+- [Columns and Constraints](/docs/visual-modeling/columns-and-constraints)
+- [Relationships](/docs/visual-modeling/relationships)
+- [Canvas Tools](/docs/visual-modeling/canvas-tools)

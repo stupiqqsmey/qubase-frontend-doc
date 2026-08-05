@@ -1,21 +1,215 @@
 ---
 title: Relationships
-description: Learn the essential Qubase workflow for relationships.
+description: Connect tables by defining relationships that represent how data is related within your database schema.
 ---
 
 # Relationships
 
-Relationships is part of the Qubase Visual Modeling workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Relationships define how tables are connected within a database schema. They represent the associations between business entities and help maintain data consistency across your application.
 
-## Key guidance
+In Qubase, relationships are created visually on the ERD Canvas and are automatically synchronized with the underlying database model.
 
-Use the ERD Canvas, SQL, and DBML deliberately so the Database Schema remains clear and reviewable.
+## Before you begin
 
-## Before you continue
+Before creating relationships, ensure that you have:
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+- Created a Database Schema
+- Created at least two tables
+- Defined a Primary Key in the parent table
+
+> [!NOTE]
+> A relationship usually connects the Primary Key of one table to a Foreign Key in another table.
+
+---
+
+## Why relationships matter
+
+Relationships help you:
+
+- Connect related data
+- Reduce duplicate information
+- Maintain data integrity
+- Support efficient database queries
+- Build scalable database designs
+
+Without relationships, tables become isolated and cannot accurately represent real-world business processes.
+
+---
+
+## Create a relationship
+
+To create a relationship:
+
+1. Open the ERD Canvas.
+2. Select the source table.
+3. Choose the relationship tool.
+4. Connect the source table to the target table.
+5. Configure the relationship properties.
+6. Save the changes.
+
+The relationship is immediately displayed on the ERD Canvas.
+
+---
+
+## Relationship types
+
+Qubase supports the most common database relationship types.
+
+### One-to-One (1:1)
+
+One record in the first table is associated with only one record in the second table.
+
+Example:
+
+```text
+User
+    │
+    │
+    ▼
+Profile
+```
+
+Typical use cases:
+
+- User and Profile
+- Employee and ID Card
+- Customer and Membership
+
+---
+
+### One-to-Many (1:N)
+
+One record in the parent table can be associated with multiple records in the child table.
+
+Example:
+
+```text
+Customer
+      │
+      ├─────────────► Order
+      ├─────────────► Order
+      └─────────────► Order
+```
+
+Typical use cases:
+
+- Customer → Orders
+- Category → Products
+- Department → Employees
+
+---
+
+### Many-to-Many (N:M)
+
+Many records in one table can be associated with many records in another table.
+
+This relationship usually requires a junction table.
+
+Example:
+
+```text
+Students
+     │
+     ▼
+Student_Course
+     ▲
+     │
+Courses
+```
+
+Typical use cases:
+
+- Students and Courses
+- Users and Roles
+- Products and Tags
+
+---
+
+## Foreign Keys
+
+Relationships are implemented using Foreign Keys.
+
+A Foreign Key references the Primary Key of another table.
+
+Example:
+
+```text
+Customers
+------------
+customer_id (PK)
+
+Orders
+------------
+order_id
+customer_id (FK)
+```
+
+Qubase automatically validates Foreign Key relationships before generating SQL.
+
+---
+
+## Editing relationships
+
+To edit a relationship:
+
+1. Select the relationship line.
+2. Open the Properties Panel.
+3. Update the required settings.
+4. Save the changes.
+
+Depending on your model type, you may be able to modify:
+
+- Relationship name
+- Relationship type
+- Source table
+- Target table
+- Delete behavior
+- Update behavior
+
+---
+
+## Deleting relationships
+
+To remove a relationship:
+
+1. Select the relationship.
+2. Click **Delete**.
+3. Confirm the action.
+
+> [!WARNING]
+> Deleting a relationship does not automatically remove the related columns. Review your database design after removing relationships.
+
+---
+
+## Validation
+
+Qubase validates relationships to help prevent common design issues.
+
+Validation may include:
+
+- Missing Primary Keys
+- Invalid Foreign Keys
+- Circular references
+- Duplicate relationships
+- Incompatible relationship types
+
+Any validation issues are reported before SQL generation.
+
+---
+
+## Best practices
+
+- Create Primary Keys before Foreign Keys.
+- Use meaningful relationship names when required.
+- Avoid unnecessary many-to-many relationships.
+- Keep relationship lines clear and easy to follow.
+- Review relationships before generating SQL.
+
+---
 
 ## Related guides
 
-- [Visual Modeling](/docs/visual-modeling)
-- [Documentation home](/docs)
+- [Create Tables](/docs/visual-modeling/create-tables)
+- [Columns and Constraints](/docs/visual-modeling/columns-and-constraints)
+- [Cardinality](/docs/visual-modeling/cardinality)
+- [SQL & DBML Sync](/docs/visual-modeling/sql-dbml-sync)

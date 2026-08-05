@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import { getPageMap } from "nextra/page-map";
-import { Footer, Layout, Navbar } from "nextra-theme-docs";
+import { Layout, Navbar } from "nextra-theme-docs";
+
 import "nextra-theme-docs/style.css";
 import "./globals.css";
 
@@ -20,7 +22,8 @@ export const metadata: Metadata = {
     default: "Qubase Documentation",
     template: "%s | Qubase Documentation",
   },
-  description: "Guides for designing and managing Database Schemas with Qubase.",
+  description:
+    "Guides for designing and managing Database Schemas with Qubase.",
 };
 
 export default async function RootLayout({
@@ -41,29 +44,35 @@ export default async function RootLayout({
           navbar={
             <Navbar
               logo={
-                <span className="qubase-brand">
-                  <span className="qubase-brand-mark" aria-hidden="true">
-                    Q
-                  </span>
-                  <span className="qubase-brand-copy">
-                    <strong>Qubase</strong>
-                    <small>Documentation</small>
-                  </span>
-                </span>
+                <div className="flex items-center gap-2">
+                  
+                  {/* Logo */}
+                  <Image
+                    src="/images/logo/Qbase-01-01.png"
+                    alt="Qubase"
+                    width={120}
+                    height={120}
+                    priority
+                    className="rounded-lg object-contain"
+  
+                  />
+
+                </div>
               }
             />
           }
+
           pageMap={pageMap}
-          footer={
-            <Footer>
-              <span className="qubase-footer">
-                <strong>Qubase</strong>
-                <span>Build better database systems.</span>
-              </span>
-            </Footer>
-          }
-          sidebar={{ defaultOpen: true, toggleButton: true }}
-          toc={{ float: true, title: "On This Page" }}
+
+          sidebar={{
+            defaultOpen: true,
+            toggleButton: true,
+          }}
+
+          toc={{
+            float: true,
+            title: "On This Page",
+          }}
         >
           {children}
         </Layout>

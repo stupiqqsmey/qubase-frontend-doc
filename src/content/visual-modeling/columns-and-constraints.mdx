@@ -1,21 +1,170 @@
 ---
 title: Columns and Constraints
-description: Learn the essential Qubase workflow for columns and constraints.
+description: Define columns, data types, and constraints to build a reliable database schema.
 ---
 
 # Columns and Constraints
 
-Columns and Constraints is part of the Qubase Visual Modeling workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Columns define the information stored in a table. Each column has a name, data type, and optional constraints that control how data is stored and validated.
 
-## Key guidance
+In Qubase, columns are managed directly from the ERD Canvas, allowing you to design your database visually while maintaining a consistent schema.
 
-Use the ERD Canvas, SQL, and DBML deliberately so the Database Schema remains clear and reviewable.
+## Before you begin
 
-## Before you continue
+Before adding columns, ensure that you have:
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+- Created a Database Schema
+- Created at least one table
+- Opened the ERD Canvas
+
+> [!NOTE]
+> Every table should contain at least one column. Most tables also include a Primary Key.
+
+---
+
+## Add a column
+
+To add a new column:
+
+1. Select a table on the ERD Canvas.
+2. Click **Add Column**.
+3. Enter the column information.
+4. Save the changes.
+
+The new column is immediately displayed inside the selected table.
+
+---
+
+## Column properties
+
+Each column includes several properties.
+
+| Property | Description |
+| -------- | ----------- |
+| Name | Unique column name within the table |
+| Data Type | Defines the type of data stored |
+| Nullable | Determines whether the column can contain NULL values |
+| Default Value | Optional value used when no value is provided |
+| Description | Optional documentation for the column |
+
+---
+
+## Common data types
+
+The available data types depend on the selected database system.
+
+| Data Type | Description | Example |
+| ---------- | ----------- | ------- |
+| INTEGER | Whole numbers | 100 |
+| BIGINT | Large integers | 999999999 |
+| VARCHAR | Variable-length text | John Doe |
+| TEXT | Long text | Product description |
+| BOOLEAN | True or False | true |
+| DATE | Calendar date | 2026-08-05 |
+| TIMESTAMP | Date and time | 2026-08-05 10:30 |
+| DECIMAL | Decimal numbers | 199.99 |
+| UUID | Universally unique identifier | 550e8400... |
+
+> [!TIP]
+> Choose the smallest suitable data type to improve storage efficiency.
+
+---
+
+## Column constraints
+
+Constraints help enforce data integrity.
+
+| Constraint | Purpose |
+| ---------- | ------- |
+| Primary Key | Uniquely identifies each record |
+| Foreign Key | References another table |
+| Unique | Prevents duplicate values |
+| Not Null | Requires a value |
+| Default | Automatically assigns a default value |
+| Check | Validates data against a condition |
+
+---
+
+## Example table
+
+```text
+Customers
+
+PK customer_id      UUID
+full_name           VARCHAR(100)
+email               VARCHAR(255) UNIQUE
+phone               VARCHAR(30)
+created_at          TIMESTAMP
+```
+
+---
+
+## Editing columns
+
+To modify an existing column:
+
+1. Select the table.
+2. Click the column.
+3. Update the required properties.
+4. Save the changes.
+
+Updates are immediately reflected on the ERD Canvas.
+
+---
+
+## Reordering columns
+
+Columns can be reordered to improve readability.
+
+Simply drag a column to its new position within the table.
+
+Changing the display order does not affect database functionality unless the exported SQL depends on column order.
+
+---
+
+## Deleting columns
+
+To remove a column:
+
+1. Select the column.
+2. Click **Delete**.
+3. Confirm the action.
+
+> [!WARNING]
+> Deleting a column may affect relationships, queries, or application logic that depend on it.
+
+---
+
+## Validation
+
+Qubase validates your schema while editing.
+
+Validation checks may include:
+
+- Duplicate column names
+- Missing data types
+- Invalid default values
+- Missing Primary Keys
+- Constraint conflicts
+
+Any detected issues are displayed before exporting or generating SQL.
+
+---
+
+## Best practices
+
+- Use meaningful column names.
+- Keep naming conventions consistent.
+- Assign appropriate data types.
+- Avoid unnecessary NULL values.
+- Use constraints to protect data integrity.
+- Document important columns with descriptions.
+
+---
 
 ## Related guides
 
-- [Visual Modeling](/docs/visual-modeling)
-- [Documentation home](/docs)
+- [Create Tables](/docs/visual-modeling/create-tables)
+- [Relationships](/docs/visual-modeling/relationships)
+- [Cardinality](/docs/visual-modeling/cardinality)
+- [SQL & DBML Sync](/docs/visual-modeling/sql-dbml-sync)

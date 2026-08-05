@@ -1,21 +1,198 @@
 ---
-title: Model Types
-description: Learn the essential Qubase workflow for model types.
+title: Database Model Types
+description: Understand the differences between Conceptual, Logical, and Physical database models in Qubase.
 ---
 
-# Model Types
+# Database Model Types
 
-Model Types is part of the Qubase Visual Modeling workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Before creating a database model in Qubase, you must select a model type.
 
-## Key guidance
+The selected model type controls which database objects you can create, which properties are required, and how much technical detail is included in the design.
 
-Use the ERD Canvas, SQL, and DBML deliberately so the Database Schema remains clear and reviewable.
+Qubase supports three model types:
 
-## Before you continue
+- Conceptual Model
+- Logical Model
+- Physical Model
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+## Model type overview
+
+| Model Type | Primary Purpose | User Creates | Level of Detail |
+| --- | --- | --- | --- |
+| Conceptual | Describe the business structure | Entities | High-level |
+| Logical | Define the complete data structure | Entities, attributes, keys, and relationships | Detailed but DBMS-independent |
+| Physical | Prepare the design for a specific DBMS | Database tables, columns, constraints, and indexes | Implementation-level |
+
+## Conceptual Model
+
+A Conceptual Model represents the database at a high level.
+
+It focuses on the main business entities and their relationships without including technical database details.
+
+### You can define
+
+- Entity names
+- High-level relationships
+- Main business concepts
+
+### Example
+
+For an online store, a Conceptual Model might contain:
+
+```text
+Customer
+Order
+Product
+Payment
+```
+
+At this stage, you do not need to define data types, indexes, or database constraints.
+
+### Use a Conceptual Model when
+
+- Planning a new system
+- Discussing requirements with stakeholders
+- Identifying major business entities
+- Creating an initial database overview
+
+> [!NOTE]
+> In a Conceptual Model, Qubase requires only the entity name when creating a new entity.
+
+## Logical Model
+
+A Logical Model describes the full database structure without depending on a specific database management system.
+
+It adds more detail to the entities identified in the Conceptual Model.
+
+### You can define
+
+- Entity or table names
+- Attributes
+- Primary Keys
+- Foreign Keys
+- Relationships
+- Cardinality
+
+### Example
+
+```text
+Customer
+├── customer_id
+├── full_name
+└── email
+
+Order
+├── order_id
+├── customer_id
+└── order_date
+```
+
+The Logical Model explains how data is organized, but it does not require database-specific data types.
+
+### Use a Logical Model when
+
+- Designing the complete database structure
+- Defining keys and relationships
+- Reviewing data requirements
+- Preparing the model before physical implementation
+
+## Physical Model
+
+A Physical Model represents the database structure for implementation in a specific DBMS.
+
+It contains the most technical details and follows database-specific rules.
+
+### You can define
+
+- Table names
+- Columns
+- Data types
+- Primary Keys
+- Foreign Keys
+- Constraints
+- Indexes
+- Default values
+- Nullable rules
+
+### Example
+
+```sql
+CREATE TABLE customers (
+  customer_id UUID PRIMARY KEY,
+  full_name VARCHAR(100) NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL
+);
+```
+
+### Use a Physical Model when
+
+- Preparing the database for implementation
+- Generating SQL
+- Connecting to a DBMS
+- Defining database-specific data types and constraints
+- Creating indexes and performance rules
+
+> [!IMPORTANT]
+> Physical Models may require selecting or connecting to a supported DBMS because data types and SQL rules can differ between PostgreSQL, MySQL, and SQL Server.
+
+## How Qubase adapts to the selected model
+
+When you create a new database object, Qubase changes the creation form based on the selected model type.
+
+| Selected Model | Form Requirements |
+| --- | --- |
+| Conceptual | Entity name |
+| Logical | Entity name, attributes, keys, relationships, and cardinality |
+| Physical | Table name, columns, data types, keys, constraints, indexes, defaults, and nullable rules |
+
+This prevents unnecessary technical fields from appearing when you are working at a higher design level.
+
+## Choose the right model type
+
+Use the following guide:
+
+```text
+Do you only need to define business entities?
+        │
+        ├── Yes → Conceptual Model
+        │
+        └── No
+             │
+             ├── Do you need keys and relationships without DBMS details?
+             │       ├── Yes → Logical Model
+             │       └── No → Physical Model
+```
+
+## Moving between model types
+
+Qubase supports database model transformation between:
+
+```text
+Conceptual
+    ↓
+Logical
+    ↓
+Physical
+```
+
+Database objects such as entities, attributes, relationships, Primary Keys, Foreign Keys, and constraints are transformed according to the selected target model.
+
+Before applying a transformation, Qubase can display a preview of the resulting model.
+
+> [!WARNING]
+> Moving to a more detailed model may require additional information. For example, transforming a Logical Model into a Physical Model may require data types, constraints, and a target DBMS.
+
+## Best practices
+
+- Start with a Conceptual Model when requirements are still being discussed.
+- Use a Logical Model to validate the full data structure.
+- Use a Physical Model only when implementation details are known.
+- Confirm the selected DBMS before defining physical data types.
+- Review the model transformation preview before applying changes.
 
 ## Related guides
 
-- [Visual Modeling](/docs/visual-modeling)
-- [Documentation home](/docs)
+- [Visual Modeling Overview](/docs/visual-modeling)
+- [ERD Canvas](/docs/visual-modeling/erd-canvas)
+- [Create Tables and Entities](/docs/visual-modeling/create-tables)
+- [Columns and Constraints](/docs/visual-modeling/columns-and-constraints)

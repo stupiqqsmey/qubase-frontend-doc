@@ -1,21 +1,131 @@
 ---
-title: SQL and DBML Sync
-description: Learn the essential Qubase workflow for sql and dbml sync.
+title: SQL & DBML Synchronization
+description: Keep your visual database model synchronized with SQL and DBML for a consistent database design workflow.
 ---
 
-# SQL and DBML Sync
+# SQL & DBML Synchronization
 
-SQL and DBML Sync is part of the Qubase Visual Modeling workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Qubase automatically synchronizes your visual database model with SQL and DBML, allowing you to switch between visual design and code without rebuilding your schema.
 
-## Key guidance
+This synchronization helps maintain a single source of truth for your database design.
 
-Use the ERD Canvas, SQL, and DBML deliberately so the Database Schema remains clear and reviewable.
+## Before you begin
 
-## Before you continue
+Before using SQL or DBML synchronization, ensure that you have:
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+- Created a Database Schema
+- Designed at least one table
+- Saved your schema
+
+> [!NOTE]
+> Synchronization is available only for supported database models.
+
+---
+
+## What is SQL synchronization?
+
+SQL synchronization converts your visual database design into executable SQL statements.
+
+You can use the generated SQL to:
+
+- Create databases
+- Create tables
+- Define constraints
+- Build relationships
+- Deploy your schema
+
+---
+
+## What is DBML synchronization?
+
+DBML (Database Markup Language) is a human-readable language for describing database structures.
+
+Qubase keeps your ERD and DBML synchronized so that changes in one representation are reflected in the other.
+
+---
+
+## Supported synchronization
+
+Qubase supports:
+
+- ERD → SQL
+- ERD → DBML
+- DBML → ERD
+- SQL → ERD *(when supported)*
+
+The available synchronization options depend on your project configuration and database type.
+
+---
+
+## Generate SQL
+
+To generate SQL:
+
+1. Open a Database Schema.
+2. Complete your database design.
+3. Select **Generate SQL**.
+4. Review the generated SQL.
+5. Export or copy the script.
+
+Generated SQL follows the selected database system whenever possible.
+
+---
+
+## Generate DBML
+
+To generate DBML:
+
+1. Open your Database Schema.
+2. Select **Generate DBML**.
+3. Review the generated code.
+4. Copy or export the result.
+
+DBML can be shared, versioned, or imported into compatible tools.
+
+---
+
+## Synchronization workflow
+
+```text
+ERD Canvas
+      │
+      ├────────► SQL
+      │
+      └────────► DBML
+```
+
+Changes made to the visual model are reflected in generated outputs during synchronization.
+
+---
+
+## Validation
+
+Before synchronization, Qubase validates the database schema.
+
+Validation checks may include:
+
+- Missing Primary Keys
+- Invalid Foreign Keys
+- Duplicate table names
+- Missing data types
+- Invalid relationships
+
+Any validation issues should be resolved before exporting SQL or DBML.
+
+---
+
+## Best practices
+
+- Complete your schema before generating SQL.
+- Validate the model before exporting.
+- Review generated SQL before deploying it.
+- Keep SQL and DBML synchronized with the latest database design.
+
+---
 
 ## Related guides
 
-- [Visual Modeling](/docs/visual-modeling)
-- [Documentation home](/docs)
+- [ERD Canvas](/docs/visual-modeling/erd-canvas)
+- [Create Tables](/docs/visual-modeling/create-tables)
+- [Relationships](/docs/visual-modeling/relationships)
+- [Database Engineering](/docs/database-engineering)

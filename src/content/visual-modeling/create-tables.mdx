@@ -1,21 +1,184 @@
 ---
 title: Create Tables
-description: Learn the essential Qubase workflow for create tables.
+description: Learn how to create and organize database tables in the Qubase ERD Canvas.
 ---
 
 # Create Tables
 
-Create Tables is part of the Qubase Visual Modeling workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Tables are the foundation of every database schema. Each table stores information about a specific entity, such as users, products, orders, or categories.
 
-## Key guidance
+In Qubase, tables are created directly on the ERD Canvas and become the building blocks of your database design.
 
-Use the ERD Canvas, SQL, and DBML deliberately so the Database Schema remains clear and reviewable.
+## Before you begin
 
-## Before you continue
+Before creating a table, ensure that you have:
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+- Created a Database Schema
+- Opened the ERD Canvas
+- Selected the appropriate database model type
 
-## Related guides
+> [!NOTE]
+> A Database Schema can contain multiple tables connected through relationships.
 
-- [Visual Modeling](/docs/visual-modeling)
-- [Documentation home](/docs)
+---
+
+## Create a new table
+
+To create a table:
+
+1. Open the ERD Canvas.
+2. Click **Add Table** from the toolbar.
+3. Enter a table name.
+4. Click **Create**.
+
+The new table is immediately added to the canvas.
+
+---
+
+## Table information
+
+Each table contains basic information that identifies it within the schema.
+
+| Property | Description |
+| -------- | ----------- |
+| Table Name | The unique name of the table |
+| Description | Optional explanation of the table |
+| Position | The table location on the canvas |
+| Model Type | The selected database model |
+
+---
+
+## Naming tables
+
+Choose names that clearly describe the data stored in the table.
+
+### Recommended
+
+```text
+Users
+Products
+Orders
+Categories
+Invoices
+Payments
+```
+
+### Avoid
+
+```text
+Table1
+Data
+Test
+MyTable
+ABC
+```
+
+> [!TIP]
+> Use singular or plural naming consistently throughout your database project.
+
+---
+
+## Table layout
+
+Each table displayed on the ERD Canvas includes:
+
+```text
+┌─────────────────────────┐
+│ Customers               │
+├─────────────────────────┤
+│ PK customer_id          │
+│ full_name              │
+│ email                  │
+│ phone                  │
+└─────────────────────────┘
+```
+
+As columns are added, the table automatically expands to display the new fields.
+
+---
+
+## Moving tables
+
+After creating a table, you can reposition it anywhere on the canvas.
+
+Simply:
+
+1. Select the table.
+2. Drag it to a new location.
+3. Release the mouse button.
+
+Relationship lines automatically adjust to the new position.
+
+---
+
+## Renaming a table
+
+To rename a table:
+
+1. Select the table.
+2. Open the Properties Panel.
+3. Update the table name.
+4. Save the changes.
+
+The updated name is reflected immediately throughout the database model.
+
+---
+
+## Duplicating a table
+
+To create a copy of an existing table:
+
+1. Select the table.
+2. Right-click the table.
+3. Choose **Duplicate**.
+
+The duplicated table contains the same structure but can be modified independently.
+
+---
+
+## Deleting a table
+
+To remove a table:
+
+1. Select the table.
+2. Press **Delete** or choose **Delete** from the context menu.
+3. Confirm the action.
+
+> [!WARNING]
+> Deleting a table also removes any relationships connected to it. This action may affect the integrity of your database design.
+
+---
+
+## Organizing large schemas
+
+As your project grows, organizing tables becomes increasingly important.
+
+Recommended practices include:
+
+- Group related tables together.
+- Separate modules by business domain.
+- Leave enough spacing between tables.
+- Minimize crossing relationship lines.
+- Use consistent table naming conventions.
+
+A well-organized ERD is easier to understand and maintain.
+
+---
+
+## Best practices
+
+- Use descriptive table names.
+- Create one table for each business entity.
+- Avoid duplicate tables.
+- Keep related tables close together.
+- Review your table structure before adding relationships.
+
+---
+
+## Next steps
+
+Now that your tables have been created, continue with:
+
+- [Columns and Constraints](/docs/visual-modeling/columns-and-constraints)
+- [Relationships](/docs/visual-modeling/relationships)
+- [Cardinality](/docs/visual-modeling/cardinality)

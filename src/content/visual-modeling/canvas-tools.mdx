@@ -1,21 +1,169 @@
 ---
 title: Canvas Tools
-description: Learn the essential Qubase workflow for canvas tools.
+description: Learn how to use the tools available on the ERD Canvas to design, organize, and manage your database schemas.
 ---
 
 # Canvas Tools
 
-Canvas Tools is part of the Qubase Visual Modeling workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+The ERD Canvas provides a collection of tools that help you design, edit, and organize your database schema efficiently.
 
-## Key guidance
+These tools allow you to create database objects, navigate large diagrams, and manage your workspace without leaving the canvas.
 
-Use the ERD Canvas, SQL, and DBML deliberately so the Database Schema remains clear and reviewable.
+## Before you begin
 
-## Before you continue
+Before using the canvas tools, ensure that you have:
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+- Created a Database Schema
+- Opened the ERD Canvas
+- Selected a database model type
+
+---
+
+## Toolbar overview
+
+The toolbar provides quick access to the most commonly used actions.
+
+Depending on your workspace and model type, available tools may include:
+
+| Tool | Purpose |
+| ---- | ------- |
+| Add Table | Create a new table or entity |
+| Relationship Tool | Connect tables with relationships |
+| Selection Tool | Select and edit objects |
+| Hand Tool | Move around the canvas |
+| Zoom In | Increase the zoom level |
+| Zoom Out | Decrease the zoom level |
+| Fit to Screen | Display the entire diagram |
+| Undo | Revert the last action |
+| Redo | Restore the last reverted action |
+
+---
+
+## Selection Tool
+
+The Selection Tool allows you to interact with objects on the canvas.
+
+Using this tool, you can:
+
+- Select tables
+- Select relationships
+- Move objects
+- Resize objects
+- Open object properties
+
+> [!TIP]
+> Use the Selection Tool as your default editing mode.
+
+---
+
+## Add Table
+
+The Add Table tool creates a new database table on the canvas.
+
+After creating a table, you can:
+
+- Add columns
+- Configure keys
+- Create relationships
+- Edit table properties
+
+See also:
+
+- [Create Tables](/docs/visual-modeling/create-tables)
+
+---
+
+## Relationship Tool
+
+The Relationship Tool connects two tables together.
+
+After selecting a source table, drag the connection to another table and configure the relationship type.
+
+Supported relationship types include:
+
+- One-to-One
+- One-to-Many
+- Many-to-Many
+
+See also:
+
+- [Relationships](/docs/visual-modeling/relationships)
+
+---
+
+## Navigation tools
+
+Large database schemas can become difficult to navigate.
+
+Navigation tools help you move around the canvas quickly.
+
+Available actions include:
+
+- Pan
+- Zoom In
+- Zoom Out
+- Fit to Screen
+- Mini Map navigation
+
+---
+
+## Undo and Redo
+
+Mistakes are a normal part of database design.
+
+Qubase allows you to quickly reverse or restore actions.
+
+| Action | Shortcut |
+| ------ | -------- |
+| Undo | Ctrl + Z |
+| Redo | Ctrl + Shift + Z |
+
+---
+
+## Context menu
+
+Right-clicking an object opens a context menu.
+
+Depending on the selected object, available actions may include:
+
+- Rename
+- Duplicate
+- Delete
+- Edit Properties
+- Copy
+- Paste
+
+The available actions depend on the selected object type.
+
+---
+
+## Editing tools
+
+After selecting a database object, you can:
+
+- Rename tables
+- Edit columns
+- Configure constraints
+- Modify relationships
+- Update descriptions
+
+Changes are reflected immediately on the ERD Canvas.
+
+---
+
+## Best practices
+
+- Use the Selection Tool for most editing tasks.
+- Keep the canvas organized while designing.
+- Frequently use Fit to Screen when working with large schemas.
+- Use Undo instead of recreating objects after mistakes.
+- Review your diagram before generating SQL.
+
+---
 
 ## Related guides
 
-- [Visual Modeling](/docs/visual-modeling)
-- [Documentation home](/docs)
+- [ERD Canvas](/docs/visual-modeling/erd-canvas)
+- [Mini Map](/docs/visual-modeling/mini-map)
+- [Create Tables](/docs/visual-modeling/create-tables)
+- [Relationships](/docs/visual-modeling/relationships)

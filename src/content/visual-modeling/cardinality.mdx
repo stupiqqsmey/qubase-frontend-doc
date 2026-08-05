@@ -1,21 +1,211 @@
 ---
 title: Cardinality
-description: Learn the essential Qubase workflow for cardinality.
+description: Learn how cardinality defines the number of records that can participate in a relationship between tables.
 ---
 
 # Cardinality
 
-Cardinality is part of the Qubase Visual Modeling workflow. This guide introduces the key concepts without assuming unsupported platform behavior.
+Cardinality defines how many records in one table can be associated with records in another table.
 
-## Key guidance
+It is one of the most important concepts in database modeling because it describes the business rules behind a relationship.
 
-Use the ERD Canvas, SQL, and DBML deliberately so the Database Schema remains clear and reviewable.
+In Qubase, cardinality is configured when creating or editing relationships on the ERD Canvas.
 
-## Before you continue
+## Before you begin
 
-Keep names and changes consistent with the Database Schema conventions agreed for your Project.
+Before working with cardinality, make sure you have:
+
+- Created at least two tables
+- Created a relationship between them
+- Defined the required Primary and Foreign Keys
+
+> [!NOTE]
+> Cardinality describes the relationship between records, not between tables.
+
+---
+
+## Why cardinality matters
+
+Cardinality helps define business rules such as:
+
+- Can one customer place multiple orders?
+- Can one employee manage many departments?
+- Can one student enroll in many courses?
+
+Correct cardinality ensures that your database accurately reflects real-world relationships.
+
+---
+
+## Cardinality symbols
+
+Qubase follows standard ERD notation.
+
+| Symbol | Meaning |
+| ------ | ------- |
+| 1 | Exactly one |
+| 0..1 | Zero or one |
+| 1..* | One or many |
+| 0..* | Zero or many |
+
+---
+
+## One-to-One (1:1)
+
+Each record is associated with exactly one record in another table.
+
+Example:
+
+```text
+User
+   │
+   │
+Profile
+```
+
+Business example:
+
+- One User has one Profile.
+- One Passport belongs to one Citizen.
+
+Use this relationship when both records should exist only once.
+
+---
+
+## One-to-Many (1:N)
+
+One record can be related to multiple records.
+
+Example:
+
+```text
+Customer
+     │
+     ├────────► Order
+     ├────────► Order
+     └────────► Order
+```
+
+Business example:
+
+- One Customer places many Orders.
+- One Department has many Employees.
+- One Category contains many Products.
+
+This is the most common relationship in relational databases.
+
+---
+
+## Many-to-Many (N:M)
+
+Multiple records in both tables can be related to each other.
+
+Example:
+
+```text
+Student
+     │
+     ▼
+Enrollment
+     ▲
+     │
+Course
+```
+
+Business example:
+
+- Students enroll in multiple Courses.
+- Courses contain multiple Students.
+- Products belong to multiple Categories.
+
+Qubase represents this relationship using a junction table.
+
+---
+
+## Optional relationships
+
+Some relationships allow records to exist without a related record.
+
+Example:
+
+```text
+Customer
+
+0..1
+
+Membership
+```
+
+Meaning:
+
+- A customer may have a membership.
+- A customer may also have no membership.
+
+---
+
+## Mandatory relationships
+
+Some relationships require every record to participate.
+
+Example:
+
+```text
+Order
+
+1
+
+Customer
+```
+
+Meaning:
+
+Every Order must belong to exactly one Customer.
+
+---
+
+## Choosing the correct cardinality
+
+Ask the following questions:
+
+- Can one record have multiple related records?
+- Is the relationship optional?
+- Must every record be connected?
+- Should a junction table be used?
+
+These questions help determine the correct relationship type.
+
+---
+
+## Validation
+
+Qubase validates cardinality before generating SQL.
+
+Validation checks may include:
+
+- Missing Foreign Keys
+- Invalid relationship rules
+- Duplicate relationships
+- Unsupported cardinality combinations
+
+Validation helps prevent inconsistent database designs.
+
+---
+
+## Best practices
+
+- Understand the business rules before creating relationships.
+- Avoid using many-to-many relationships unless necessary.
+- Review cardinality during schema validation.
+- Keep relationship definitions simple and consistent.
+- Validate your model before exporting SQL.
+
+> [!TIP]
+> If you're unsure which cardinality to use, start by asking how the real-world entities interact with each other.
+
+---
 
 ## Related guides
 
-- [Visual Modeling](/docs/visual-modeling)
-- [Documentation home](/docs)
+- [Relationships](/docs/visual-modeling/relationships)
+- [Columns and Constraints](/docs/visual-modeling/columns-and-constraints)
+- [Canvas Tools](/docs/visual-modeling/canvas-tools)
+- [SQL & DBML Sync](/docs/visual-modeling/sql-dbml-sync)
